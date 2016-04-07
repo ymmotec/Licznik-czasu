@@ -1,0 +1,107 @@
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.pdb
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.exe
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.pdb
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\licznik.mdf
+d:\dokumenty\visual studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\licznik_log.ldf
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoEntityFramework.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoWymaganiaDlaPol.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DrobneZmiany.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.problemZMaszynami.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoBrygade.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoNazweLinii.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoEntityFramework.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoWymaganiaDlaPol.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DrobneZmiany.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.problemZMaszynami.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoBrygade.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoNazweLinii.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Moje Dokumenty\Visual Studio 2015\Projects\Licznik czasu\Licznik czasu\obj\Debug\Licznik_czasu.Migrations.DodanoLinieProd.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\OEE.Data.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 2\Licznik czasu\bin\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\OEE.Data.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.application

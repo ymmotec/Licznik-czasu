@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licznik czasu", "Licznik czasu\Licznik czasu.csproj", "{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEE.Data", "OEE.Data\OEE.Data.csproj", "{068E91EA-0575-4131-9485-15DC19F06FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEE.Raport", "OEE.Raport\OEE.Raport.csproj", "{523AA868-CFFD-425D-A600-1D1E7959901D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
