@@ -247,7 +247,7 @@ namespace Licznik_czasu
                 }
                 else if (ObecnyStan.NazwaZdarzenia == "Przezbrojenie")
                 {
-                    // typ ObednyStan to Przezbrojenie zapisujemy obiekt przezbrojenie
+                    // typ ObecnyStan to Przezbrojenie zapisujemy obiekt przezbrojenie
                     Przezbrojenie nowePrzezbrojenie = new Przezbrojenie { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Przezbrojenia.Add(nowePrzezbrojenie);
                     db.SaveChanges();

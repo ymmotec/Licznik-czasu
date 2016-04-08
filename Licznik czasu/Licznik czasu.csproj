@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StanManager.cs" />
     <EmbeddedResource Include="DanePrzezbrojeniaForm.resx">
       <DependentUpon>DanePrzezbrojeniaForm.cs</DependentUpon>
     </EmbeddedResource>
