@@ -22,3 +22,4 @@ D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\OEE.Data\obj\Debug\OEE.
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\OEE.Data\obj\Debug\OEE.Data.csproj.GenerateResource.Cache
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\OEE.Data\obj\Debug\OEE.Data.dll
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\OEE.Data\obj\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\OEE.Data\obj\Debug\OEE.Data.Migrations.Dodanomodeldlaproduktuelementuikoloru.resources

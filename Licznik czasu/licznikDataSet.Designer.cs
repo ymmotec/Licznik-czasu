@@ -2993,7 +2993,7 @@ SELECT MaszynaId, NazwaMaszyny, Linia_LiniaId FROM Maszyny WHERE (MaszynaId = @M
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [Stan] ([GodzinaUruchomienia], [CzasTrwania], [OpisAwarii], [OpisPrzezbrojenia], [Discriminator], [Maszyna_MaszynaId], [TypZdarzenia_TypZdarzeniaId], [Brygada], [LiniaProdukcyjna]) VALUES (@GodzinaUruchomienia, @CzasTrwania, @OpisAwarii, @OpisPrzezbrojenia, @Discriminator, @Maszyna_MaszynaId, @TypZdarzenia_TypZdarzeniaId, @Brygada, @LiniaProdukcyjna);
-SELECT StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, Brygada, LiniaProdukcyjna FROM Stan WHERE (StanId = SCOPE_IDENTITY()) ORDER BY GodzinaUruchomienia DESC";
+SELECT TOP (500) StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, Brygada, LiniaProdukcyjna FROM Stan WHERE (StanId = SCOPE_IDENTITY()) ORDER BY GodzinaUruchomienia DESC";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GodzinaUruchomienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodzinaUruchomienia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzasTrwania", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzasTrwania", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3007,7 +3007,7 @@ SELECT StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, 
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [Stan] SET [GodzinaUruchomienia] = @GodzinaUruchomienia, [CzasTrwania] = @CzasTrwania, [OpisAwarii] = @OpisAwarii, [OpisPrzezbrojenia] = @OpisPrzezbrojenia, [Discriminator] = @Discriminator, [Maszyna_MaszynaId] = @Maszyna_MaszynaId, [TypZdarzenia_TypZdarzeniaId] = @TypZdarzenia_TypZdarzeniaId, [Brygada] = @Brygada, [LiniaProdukcyjna] = @LiniaProdukcyjna WHERE (([StanId] = @Original_StanId) AND ([GodzinaUruchomienia] = @Original_GodzinaUruchomienia) AND ([CzasTrwania] = @Original_CzasTrwania) AND ([Discriminator] = @Original_Discriminator) AND ((@IsNull_Maszyna_MaszynaId = 1 AND [Maszyna_MaszynaId] IS NULL) OR ([Maszyna_MaszynaId] = @Original_Maszyna_MaszynaId)) AND ([TypZdarzenia_TypZdarzeniaId] = @Original_TypZdarzenia_TypZdarzeniaId) AND ([Brygada] = @Original_Brygada));
-SELECT StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, Brygada, LiniaProdukcyjna FROM Stan WHERE (StanId = @StanId) ORDER BY GodzinaUruchomienia DESC";
+SELECT TOP (500) StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, Brygada, LiniaProdukcyjna FROM Stan WHERE (StanId = @StanId) ORDER BY GodzinaUruchomienia DESC";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GodzinaUruchomienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodzinaUruchomienia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzasTrwania", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzasTrwania", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3042,9 +3042,10 @@ SELECT StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbrojenia, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, OpisPrzezbroj" +
-                "enia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, Brygada, Li" +
-                "niaProdukcyjna\r\nFROM            Stan\r\nORDER BY GodzinaUruchomienia DESC";
+            this._commandCollection[0].CommandText = "SELECT        TOP (500) StanId, GodzinaUruchomienia, CzasTrwania, OpisAwarii, Opi" +
+                "sPrzezbrojenia, Discriminator, Maszyna_MaszynaId, TypZdarzenia_TypZdarzeniaId, B" +
+                "rygada, LiniaProdukcyjna\r\nFROM            Stan\r\nORDER BY GodzinaUruchomienia DES" +
+                "C";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
