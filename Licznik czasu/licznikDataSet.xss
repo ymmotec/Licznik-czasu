@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:Linia" ZOrder="7" X="70" Y="70" Height="115" Width="172" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Maszyny" ZOrder="6" X="312" Y="70" Height="134" Width="195" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Stan" ZOrder="5" X="577" Y="70" Height="267" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:Stan" ZOrder="5" X="576" Y="70" Height="267" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:TypZdarzenias" ZOrder="4" X="830" Y="70" Height="115" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
   </Shapes>
   <Connectors>
@@ -31,7 +31,7 @@
           <Y>137</Y>
         </Point>
         <Point>
-          <X>577</X>
+          <X>576</X>
           <Y>137</Y>
         </Point>
       </RoutePoints>
@@ -43,7 +43,7 @@
           <Y>119</Y>
         </Point>
         <Point>
-          <X>760</X>
+          <X>759</X>
           <Y>119</Y>
         </Point>
       </RoutePoints>

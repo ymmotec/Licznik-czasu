@@ -25,7 +25,7 @@ namespace Licznik_czasu.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public string czasOczekiwania {
             get {
                 return ((string)(this["czasOczekiwania"]));
@@ -41,28 +41,6 @@ namespace Licznik_czasu.Properties {
             }
             set {
                 this["nazwaLiniiProdukcyjnej"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.5.202\\BFML;Initial Catalog=LicznikDataModel;User ID=licznik;P" +
-            "assword=t")]
-        public string LicznikDataModelConnectionString {
-            get {
-                return ((string)(this["LicznikDataModelConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.5.202\\BFML;Initial Catalog=LicznikDataModel;User ID=licznik;P" +
-            "assword=t")]
-        public string Licznik_czasu_LicznikDataModelConnectionString {
-            get {
-                return ((string)(this["Licznik_czasu_LicznikDataModelConnectionString"]));
             }
         }
     }

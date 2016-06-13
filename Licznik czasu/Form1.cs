@@ -35,7 +35,21 @@ namespace Licznik_czasu
         /// ustawiony jest w App.config
         /// </summary>
         public string ArduinoPort { get; set; }
+        #region properties
+        //właściwości formularza
+        public TypZdarzenia ObecnyStan { get; set; }
+        public DateTime CzasUruchomienia { get; set; }
+        public int CzasTrwania { get; set; }
+        LicznikDataModel db = new LicznikDataModel();
+        public int Brygada { get; set; }
+        public float Tempo { get; set; }
 
+        /// <summary>
+        /// Początek zmiany służy do obliczeenia wydajności maszyny od początku zmiany nr 1, 2, 3
+        /// </summary>
+        public DateTime PoczatekZmiany { get; set; }
+
+        #endregion
 
         //dane z arduino
         String arduinoMessage;
@@ -53,29 +67,15 @@ namespace Licznik_czasu
         }
 
 
-        #region properties
-        //właściwości formularza
-        public TypZdarzenia ObecnyStan { get; set; }
-        public DateTime CzasUruchomienia { get; set; }
-        public int CzasTrwania { get; set; }
-        LicznikDataModel db = new LicznikDataModel();
-        public int Brygada { get; set; }
-        public float Tempo { get; set; }
 
-        /// <summary>
-        /// Początek zmiany służy do obliczeenia wydajności maszyny od początku zmiany nr 1, 2, 3
-        /// </summary>
-        public DateTime PoczatekZmiany { get; set; }
-
-        #endregion
 
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             // interwał = 1 sekunda
-            CzasTrwania ++;
-            Odstep ++;
+            CzasTrwania++;
+            Odstep++;
             lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
 
             if (Odstep > MaxOdstep && ObecnyStan.NazwaZdarzenia == "Produkcja")
@@ -93,12 +93,15 @@ namespace Licznik_czasu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
-            this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.Stan' . Możesz go przenieść lub usunąć.
-            this.stanTableAdapter.Fill(this.licznikDataSet.Stan);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
-            this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
+            //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.Stan' . Możesz go przenieść lub usunąć.
+            //this.stanTableAdapter.Fill(this.licznikDataSet.Stan);
+            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
+            //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+            PopulateCmbStan();
+            PopulateDgvListaZdarzen();
+
             /*
             Po uruchomieniu formularza ustawiam stan "Czekam".
             Stan zmienia się na produkcja po odczycie z czytnika
@@ -115,6 +118,20 @@ namespace Licznik_czasu
 
         }
 
+        private void PopulateCmbStan()
+        {
+            List<TypZdarzenia> listaTypowZdarzen = db.TypZdarzenia.ToList();
+            cmbStan.DataSource = listaTypowZdarzen;
+            cmbStan.DisplayMember = "NazwaZdarzenia";
+            cmbStan.ValueMember = "TypZdarzeniaId";
+        }
+
+        private void PopulateDgvListaZdarzen()
+        {
+            List<Stan> listaStanow = db.Stan.Take(500).Where(s => s.LiniaProdukcyjna == LiniaProdukcyjna).ToList();
+            var lista = listaStanow.Select(l => new { l.StanId, l.TypZdarzenia.NazwaZdarzenia, l.GodzinaUruchomienia, l.CzasTrwania, l.Brygada }).OrderByDescending(l => l.GodzinaUruchomienia).ToList();
+            dgvListaZdarzen.DataSource = lista;
+        }
 
 
         private void btnZmienStan_Click(object sender, EventArgs e)
@@ -201,9 +218,15 @@ namespace Licznik_czasu
                     btnStartMaszyny.Enabled = false;
                     timer1.Start();
                 }
+                catch(System.IO.IOException)
+                {
+                    MessageBox.Show("Brak połączenia z czujnikiem:\n1. Odłącz kabel usb.\n2. Podłącz go ponownie.\n\nJeżeli powyższe kroki nie rozwiążą problemu, skontaktuj się z autorem programu.",
+                        "Brak połączenia z arduino!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Nie można połączyć się z arduino! " + ex.ToString());
+                    MessageBox.Show("Nie można uruchomić programu\nSkontaktuj się z autorem programu. " + ex.ToString());
                 }
 
             }
@@ -218,7 +241,7 @@ namespace Licznik_czasu
         {
             if (ObecnyStan != null)
             {
-                
+
                 if (ObecnyStan.NazwaZdarzenia == "Nieokreślony" && nowyStan.NazwaZdarzenia != "Produkcja")
                 {
                     // jeżeli ObecnyStan to "Nieokreślony" a nowyStan to nie "Produkcja" zmieniamy Obecny stan bez zapisywania w bazie.
@@ -233,7 +256,7 @@ namespace Licznik_czasu
                     Awaria nowaAwaria = new Awaria { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Awaria.Add(nowaAwaria);
                     db.SaveChanges();
-                    stanTableAdapter.Fill(this.licznikDataSet.Stan);
+                    PopulateDgvListaZdarzen();
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
@@ -251,7 +274,7 @@ namespace Licznik_czasu
                     Przezbrojenie nowePrzezbrojenie = new Przezbrojenie { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Przezbrojenia.Add(nowePrzezbrojenie);
                     db.SaveChanges();
-                    stanTableAdapter.Fill(this.licznikDataSet.Stan);
+                    PopulateDgvListaZdarzen();
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
@@ -269,7 +292,7 @@ namespace Licznik_czasu
                     Stan stanDoZapisania = new Stan { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Stan.Add(stanDoZapisania);
                     db.SaveChanges();
-                    stanTableAdapter.Fill(this.licznikDataSet.Stan);
+                    PopulateDgvListaZdarzen();
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
@@ -289,7 +312,7 @@ namespace Licznik_czasu
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // po kliknięciu wiersza otwieramy okno edycji
-            int stanID = (int)dataGridView1.Rows[e.RowIndex].Cells[stanIdDataGridViewTextBoxColumn.Name].Value;
+            int stanID = (int)dgvListaZdarzen.Rows[e.RowIndex].Cells[stanIdDataGridViewColumn.Name].Value;
             //MessageBox.Show(stanID.ToString());
 
             using (LicznikDataModel db = new LicznikDataModel())
@@ -342,7 +365,7 @@ namespace Licznik_czasu
 
         private void czytajImpuls(object sender, EventArgs e)
         {
-            licznikSztuk ++;
+            licznikSztuk++;
             lblBiezacyCzasCyklu.Text = Odstep.ToString();
 
             try
@@ -356,7 +379,7 @@ namespace Licznik_czasu
             }
 
             lblIloscCykliNaMinute.Text = string.Format("{0:0.0}", Tempo) + " cykli/minutę";
-            Odstep = 0;            
+            Odstep = 0;
             lblLicznikSztuk.Text = licznikSztuk.ToString();
 
         }
@@ -424,7 +447,8 @@ namespace Licznik_czasu
             DialogResult wynik = typForm.ShowDialog();
             if (wynik == DialogResult.OK)
             {
-                this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+                //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+                PopulateCmbStan();
                 cmbStan.SelectedIndex = -1;
             }
         }

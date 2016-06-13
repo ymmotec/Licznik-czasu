@@ -17,6 +17,7 @@ namespace OEE.Data.DataModel
         [MaxLength(50)]
         public string NazwaZdarzenia { get; set; }
 
+        public virtual List<Linia> Linia { get; set; }
         public virtual List<Stan> Stany { get; set; }
     }
 }

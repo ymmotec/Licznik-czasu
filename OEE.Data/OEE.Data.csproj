@@ -50,13 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModel\Awaria.cs" />
-    <Compile Include="DataModel\Element.cs" />
-    <Compile Include="DataModel\Kolor.cs" />
     <Compile Include="DataModel\LicznikDataModel.cs" />
     <Compile Include="DataModel\Linia.cs" />
     <Compile Include="DataModel\Maszyny.cs" />
     <Compile Include="DataModel\Produkcja.cs" />
-    <Compile Include="DataModel\Produkt.cs" />
     <Compile Include="DataModel\Przezbrojenie.cs" />
     <Compile Include="DataModel\Stan.cs" />
     <Compile Include="DataModel\TypZdarzenia.cs" />
@@ -64,9 +61,9 @@
     <Compile Include="Migrations\201603111400426_startowa.Designer.cs">
       <DependentUpon>201603111400426_startowa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604081033287_Dodano model dla produktu, elementu i koloru.cs" />
-    <Compile Include="Migrations\201604081033287_Dodano model dla produktu, elementu i koloru.Designer.cs">
-      <DependentUpon>201604081033287_Dodano model dla produktu, elementu i koloru.cs</DependentUpon>
+    <Compile Include="Migrations\201606081228070_Dodano połącznie linii i typu zdarzenia.cs" />
+    <Compile Include="Migrations\201606081228070_Dodano połącznie linii i typu zdarzenia.Designer.cs">
+      <DependentUpon>201606081228070_Dodano połącznie linii i typu zdarzenia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,8 +77,8 @@
     <EmbeddedResource Include="Migrations\201603111400426_startowa.resx">
       <DependentUpon>201603111400426_startowa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604081033287_Dodano model dla produktu, elementu i koloru.resx">
-      <DependentUpon>201604081033287_Dodano model dla produktu, elementu i koloru.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606081228070_Dodano połącznie linii i typu zdarzenia.resx">
+      <DependentUpon>201606081228070_Dodano połącznie linii i typu zdarzenia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

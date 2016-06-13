@@ -105,3 +105,75 @@ D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\OEE.Data.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.09\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\OEE.Data.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.05.25\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\Licznik czasu.exe.config
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\Licznik czasu.exe
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\Licznik czasu.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\EntityFramework.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\OEE.Data.dll
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\OEE.Data.pdb
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\EntityFramework.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.DanePrzezbrojeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.DodajMaszynyForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.DodajTypZdarzeniaForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.Form1.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.GenerujRaportForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.OpisAwariiForm.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik_czasu.Properties.Resources.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\Licznik czasu\obj\Debug\Licznik czasu.application

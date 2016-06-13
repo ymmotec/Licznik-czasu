@@ -36,16 +36,8 @@
             this.generujRaportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCzasTrwania = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stanIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TypZdarzenia_TypZdarzeniaId = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.typZdarzeniasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licznikDataSet = new Licznik_czasu.licznikDataSet();
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.czasTrwaniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisAwariiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvListaZdarzen = new System.Windows.Forms.DataGridView();
+            
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblUruchomionoo = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
@@ -56,9 +48,7 @@
             this.cmbStan = new System.Windows.Forms.ComboBox();
             this.btnZmienStan = new System.Windows.Forms.Button();
             this.btnStartMaszyny = new System.Windows.Forms.Button();
-            this.tableAdapterManager = new Licznik_czasu.licznikDataSetTableAdapters.TableAdapterManager();
-            this.stanTableAdapter = new Licznik_czasu.licznikDataSetTableAdapters.StanTableAdapter();
-            this.typZdarzeniasTableAdapter = new Licznik_czasu.licznikDataSetTableAdapters.TypZdarzeniasTableAdapter();
+            
             this.arduino = new System.IO.Ports.SerialPort(this.components);
             this.rdbBrygada1 = new System.Windows.Forms.RadioButton();
             this.rdbBrygada2 = new System.Windows.Forms.RadioButton();
@@ -73,11 +63,14 @@
             this.lblIloscCykliNaMinute = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.stanIdDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypZdarzeniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GodzinaUruchomieniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typZdarzeniasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licznikDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).BeginInit();
+            
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grBoxBrygada.SuspendLayout();
@@ -140,101 +133,28 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dataGridView1
+            // dgvListaZdarzen
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvListaZdarzen.AllowUserToAddRows = false;
+            this.dgvListaZdarzen.AllowUserToDeleteRows = false;
+            this.dgvListaZdarzen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stanIdDataGridViewTextBoxColumn,
-            this.TypZdarzenia_TypZdarzeniaId,
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn,
-            this.czasTrwaniaDataGridViewTextBoxColumn,
-            this.opisAwariiDataGridViewTextBoxColumn,
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.stanBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 306);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(859, 302);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // stanIdDataGridViewTextBoxColumn
-            // 
-            this.stanIdDataGridViewTextBoxColumn.DataPropertyName = "StanId";
-            this.stanIdDataGridViewTextBoxColumn.HeaderText = "StanId";
-            this.stanIdDataGridViewTextBoxColumn.Name = "stanIdDataGridViewTextBoxColumn";
-            this.stanIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stanIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.stanIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stanIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // TypZdarzenia_TypZdarzeniaId
-            // 
-            this.TypZdarzenia_TypZdarzeniaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TypZdarzenia_TypZdarzeniaId.DataPropertyName = "TypZdarzenia_TypZdarzeniaId";
-            this.TypZdarzenia_TypZdarzeniaId.DataSource = this.typZdarzeniasBindingSource;
-            this.TypZdarzenia_TypZdarzeniaId.DisplayMember = "NazwaZdarzenia";
-            this.TypZdarzenia_TypZdarzeniaId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.TypZdarzenia_TypZdarzeniaId.HeaderText = "Typ Zdarzenia";
-            this.TypZdarzenia_TypZdarzeniaId.Name = "TypZdarzenia_TypZdarzeniaId";
-            this.TypZdarzenia_TypZdarzeniaId.ReadOnly = true;
-            this.TypZdarzenia_TypZdarzeniaId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TypZdarzenia_TypZdarzeniaId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TypZdarzenia_TypZdarzeniaId.ValueMember = "TypZdarzeniaId";
-            // 
-            // typZdarzeniasBindingSource
-            // 
-            this.typZdarzeniasBindingSource.DataMember = "TypZdarzenias";
-            this.typZdarzeniasBindingSource.DataSource = this.licznikDataSet;
-            // 
-            // licznikDataSet
-            // 
-            this.licznikDataSet.DataSetName = "licznikDataSet";
-            this.licznikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // godzinaUruchomieniaDataGridViewTextBoxColumn
-            // 
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn.DataPropertyName = "GodzinaUruchomienia";
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn.HeaderText = "Godzina Uruchomienia";
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn.Name = "godzinaUruchomieniaDataGridViewTextBoxColumn";
-            this.godzinaUruchomieniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // czasTrwaniaDataGridViewTextBoxColumn
-            // 
-            this.czasTrwaniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.czasTrwaniaDataGridViewTextBoxColumn.DataPropertyName = "CzasTrwania";
-            this.czasTrwaniaDataGridViewTextBoxColumn.HeaderText = "Czas Trwania";
-            this.czasTrwaniaDataGridViewTextBoxColumn.Name = "czasTrwaniaDataGridViewTextBoxColumn";
-            this.czasTrwaniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // opisAwariiDataGridViewTextBoxColumn
-            // 
-            this.opisAwariiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.opisAwariiDataGridViewTextBoxColumn.DataPropertyName = "OpisAwarii";
-            this.opisAwariiDataGridViewTextBoxColumn.HeaderText = "Opis Awarii";
-            this.opisAwariiDataGridViewTextBoxColumn.Name = "opisAwariiDataGridViewTextBoxColumn";
-            this.opisAwariiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // opisPrzezbrojeniaDataGridViewTextBoxColumn
-            // 
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn.DataPropertyName = "OpisPrzezbrojenia";
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn.HeaderText = "Opis Przezbrojenia";
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn.Name = "opisPrzezbrojeniaDataGridViewTextBoxColumn";
-            this.opisPrzezbrojeniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stanBindingSource
-            // 
-            this.stanBindingSource.DataMember = "Stan";
-            this.stanBindingSource.DataSource = this.licznikDataSet;
+            this.dgvListaZdarzen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaZdarzen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stanIdDataGridViewColumn,
+            this.TypZdarzeniaDataGridViewColumn,
+            this.GodzinaUruchomieniaDataGridViewColumn,
+            this.CzasTrwaniaDataGridViewColumn,
+            this.BrygadaDataGridViewColumn});
+            this.dgvListaZdarzen.Location = new System.Drawing.Point(12, 306);
+            this.dgvListaZdarzen.MultiSelect = false;
+            this.dgvListaZdarzen.Name = "dgvListaZdarzen";
+            this.dgvListaZdarzen.ReadOnly = true;
+            this.dgvListaZdarzen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaZdarzen.Size = new System.Drawing.Size(859, 302);
+            this.dgvListaZdarzen.TabIndex = 6;
+            this.dgvListaZdarzen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            
             // 
             // groupBox1
             // 
@@ -311,7 +231,7 @@
             // 
             this.cmbStan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbStan.DataSource = this.typZdarzeniasBindingSource;
+            
             this.cmbStan.DisplayMember = "NazwaZdarzenia";
             this.cmbStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbStan.FormattingEnabled = true;
@@ -344,24 +264,7 @@
             this.btnStartMaszyny.Text = "Start maszyny";
             this.btnStartMaszyny.UseVisualStyleBackColor = true;
             this.btnStartMaszyny.Click += new System.EventHandler(this.btnStartMaszyny_Click);
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.LiniaTableAdapter = null;
-            this.tableAdapterManager.MaszynyTableAdapter = null;
-            this.tableAdapterManager.StanTableAdapter = null;
-            this.tableAdapterManager.TypZdarzeniasTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Licznik_czasu.licznikDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // stanTableAdapter
-            // 
-            this.stanTableAdapter.ClearBeforeFill = true;
-            // 
-            // typZdarzeniasTableAdapter
-            // 
-            this.typZdarzeniasTableAdapter.ClearBeforeFill = true;
+           
             // 
             // arduino
             // 
@@ -440,8 +343,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(128, 17);
-            this.toolStripStatusLabel1.Text = "Autor: Tomasz Gaładyk";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(299, 17);
+            this.toolStripStatusLabel1.Text = "Autor: Tomasz Gaładyk; tgaladyk@borne-furniture.com";
             // 
             // label1
             // 
@@ -504,6 +407,47 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cykle";
             // 
+            // stanIdDataGridViewColumn
+            // 
+            this.stanIdDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stanIdDataGridViewColumn.DataPropertyName = "StanId";
+            this.stanIdDataGridViewColumn.HeaderText = "StanID";
+            this.stanIdDataGridViewColumn.Name = "stanIdDataGridViewColumn";
+            this.stanIdDataGridViewColumn.ReadOnly = true;
+            this.stanIdDataGridViewColumn.Visible = false;
+            // 
+            // TypZdarzeniaDataGridViewColumn
+            // 
+            this.TypZdarzeniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypZdarzeniaDataGridViewColumn.DataPropertyName = "NazwaZdarzenia";
+            this.TypZdarzeniaDataGridViewColumn.HeaderText = "Typ zdarzenia";
+            this.TypZdarzeniaDataGridViewColumn.Name = "TypZdarzeniaDataGridViewColumn";
+            this.TypZdarzeniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // GodzinaUruchomieniaDataGridViewColumn
+            // 
+            this.GodzinaUruchomieniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GodzinaUruchomieniaDataGridViewColumn.DataPropertyName = "GodzinaUruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.HeaderText = "Godzina uruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.Name = "GodzinaUruchomieniaDataGridViewColumn";
+            this.GodzinaUruchomieniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // CzasTrwaniaDataGridViewColumn
+            // 
+            this.CzasTrwaniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CzasTrwaniaDataGridViewColumn.DataPropertyName = "CzasTrwania";
+            this.CzasTrwaniaDataGridViewColumn.HeaderText = "Czas trwania";
+            this.CzasTrwaniaDataGridViewColumn.Name = "CzasTrwaniaDataGridViewColumn";
+            this.CzasTrwaniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // BrygadaDataGridViewColumn
+            // 
+            this.BrygadaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BrygadaDataGridViewColumn.DataPropertyName = "Brygada";
+            this.BrygadaDataGridViewColumn.HeaderText = "Brygada";
+            this.BrygadaDataGridViewColumn.Name = "BrygadaDataGridViewColumn";
+            this.BrygadaDataGridViewColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,7 +462,7 @@
             this.Controls.Add(this.btnZmienStan);
             this.Controls.Add(this.cmbStan);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListaZdarzen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -527,10 +471,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typZdarzeniasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licznikDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).EndInit();
+            
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -551,7 +493,7 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.Label lblCzasTrwania;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaZdarzen;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblUruchomionoo;
         private System.Windows.Forms.Label lblOpis;
@@ -561,12 +503,6 @@
         private System.Windows.Forms.ComboBox cmbStan;
         private System.Windows.Forms.Button btnZmienStan;
         private System.Windows.Forms.Button btnStartMaszyny;
-        private licznikDataSet licznikDataSet;
-        private licznikDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource stanBindingSource;
-        private licznikDataSetTableAdapters.StanTableAdapter stanTableAdapter;
-        private licznikDataSetTableAdapters.TypZdarzeniasTableAdapter typZdarzeniasTableAdapter;
-        private System.Windows.Forms.BindingSource typZdarzeniasBindingSource;
         private System.IO.Ports.SerialPort arduino;
         private System.Windows.Forms.ToolStripMenuItem dodajMaszynyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generujRaportToolStripMenuItem;
@@ -577,12 +513,6 @@
         private System.Windows.Forms.RadioButton rdbBrygada3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox grBoxBrygada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opisPrzezbrojeniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opisAwariiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn czasTrwaniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn godzinaUruchomieniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TypZdarzenia_TypZdarzeniaId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn stanIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label5;
@@ -591,6 +521,11 @@
         private System.Windows.Forms.Label lblBiezacyCzasCyklu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stanIdDataGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypZdarzeniaDataGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GodzinaUruchomieniaDataGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CzasTrwaniaDataGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrygadaDataGridViewColumn;
     }
 }
 

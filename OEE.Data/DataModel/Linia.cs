@@ -20,6 +20,7 @@ namespace OEE.Data.DataModel
         public string NazwaLinii { get; set; }
 
         public virtual List<Maszyny> Maszyny { get; set; }
+        public virtual List<TypZdarzenia> TypyZdarzen { get; set; }
 
     }
 }

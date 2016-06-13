@@ -33,17 +33,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNowyTypZdarzenia = new System.Windows.Forms.TextBox();
-            this.licznikDataSet = new Licznik_czasu.licznikDataSet();
-            this.typZdarzeniasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typZdarzeniasTableAdapter = new Licznik_czasu.licznikDataSetTableAdapters.TypZdarzeniasTableAdapter();
-            this.tableAdapterManager = new Licznik_czasu.licznikDataSetTableAdapters.TableAdapterManager();
+            
             this.typZdarzeniaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaZdarzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnZamknij = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licznikDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typZdarzeniasBindingSource)).BeginInit();
+            
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -58,7 +54,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typZdarzeniaIdDataGridViewTextBoxColumn,
             this.nazwaZdarzeniaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.typZdarzeniasBindingSource;
+            
             this.dataGridView1.Location = new System.Drawing.Point(12, 105);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -81,28 +77,7 @@
             this.txtNowyTypZdarzenia.Name = "txtNowyTypZdarzenia";
             this.txtNowyTypZdarzenia.Size = new System.Drawing.Size(321, 26);
             this.txtNowyTypZdarzenia.TabIndex = 2;
-            // 
-            // licznikDataSet
-            // 
-            this.licznikDataSet.DataSetName = "licznikDataSet";
-            this.licznikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // typZdarzeniasBindingSource
-            // 
-            this.typZdarzeniasBindingSource.DataMember = "TypZdarzenias";
-            this.typZdarzeniasBindingSource.DataSource = this.licznikDataSet;
-            // 
-            // typZdarzeniasTableAdapter
-            // 
-            this.typZdarzeniasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.MaszynyTableAdapter = null;
-            this.tableAdapterManager.StanTableAdapter = null;
-            this.tableAdapterManager.TypZdarzeniasTableAdapter = this.typZdarzeniasTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Licznik_czasu.licznikDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            
             // 
             // typZdarzeniaIdDataGridViewTextBoxColumn
             // 
@@ -161,8 +136,7 @@
             this.Text = "Dodawanie nowego typu zdarzenia";
             this.Load += new System.EventHandler(this.DodajTypZdarzeniaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licznikDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typZdarzeniasBindingSource)).EndInit();
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,10 +147,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNowyTypZdarzenia;
-        private licznikDataSet licznikDataSet;
-        private System.Windows.Forms.BindingSource typZdarzeniasBindingSource;
-        private licznikDataSetTableAdapters.TypZdarzeniasTableAdapter typZdarzeniasTableAdapter;
-        private licznikDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn typZdarzeniaIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaZdarzeniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnDodaj;
