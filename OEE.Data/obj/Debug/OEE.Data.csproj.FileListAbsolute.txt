@@ -35,4 +35,4 @@ D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE.Data\bin\Debug\EntityFramework.xml
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE.Data\obj\Debug\OEE.Data.Migrations.Dodanopołącznieliniiitypuzdarzenia.resources
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 Barlinek 2016.06.08\OEE.Data\obj\Debug\OEE.Data.Migrations.DodałemtypZdarzeniailinijakowieledowielu.resources

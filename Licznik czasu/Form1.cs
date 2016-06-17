@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using OEE.Data.DataModel;
 using System.IO.Ports;
 using System.Configuration;
+using System.Management.Instrumentation;
+using System.Management;
 
 namespace Licznik_czasu
 {
@@ -54,6 +56,7 @@ namespace Licznik_czasu
         //dane z arduino
         String arduinoMessage;
         int licznikSztuk;
+        private List<string> COMports;
 
         public Form1()
         {
@@ -61,33 +64,10 @@ namespace Licznik_czasu
             timer1.Interval = 1000;
             //MaxOdstep = Int32.Parse(ConfigurationManager.AppSettings["czasOczekiwania"]);
             MaxOdstep = Int32.Parse(Properties.Settings.Default.czasOczekiwania);
-            ArduinoPort = ConfigurationManager.AppSettings["arduinoPort"];
+            //ArduinoPort = ConfigurationManager.AppSettings["arduinoPort"];
             LiniaProdukcyjna = Properties.Settings.Default.nazwaLiniiProdukcyjnej;
             this.Text = "Licznik czasu pracy maszyny v" + Application.ProductVersion;
-        }
-
-
-
-
-
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            // interwał = 1 sekunda
-            CzasTrwania++;
-            Odstep++;
-            lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
-
-            if (Odstep > MaxOdstep && ObecnyStan.NazwaZdarzenia == "Produkcja")
-            {
-                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Nieokreślony").FirstOrDefault();
-                UstawStan(typDoUstawienia);
-            }
-            else if (Odstep <= MaxOdstep && ObecnyStan.NazwaZdarzenia != "Produkcja")
-            {
-                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Produkcja").FirstOrDefault();
-                UstawStan(typDoUstawienia);
-            }
+            COMports = new List<string>();
         }
 
 
@@ -109,7 +89,8 @@ namespace Licznik_czasu
             Stan produkcja zostanie ustawiony automatycznie po odczycie z czytnika            
             */
 
-            arduino.PortName = ArduinoPort;
+            //arduino.PortName = ArduinoPort;
+            SprawdzPolaczenieZArduino();
             btnZmienStan.Enabled = false;
             cmbStan.SelectedIndex = -1;
             cmbStan.Enabled = true;
@@ -117,6 +98,68 @@ namespace Licznik_czasu
             licznikSztuk = 0;
 
         }
+
+
+
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            SprawdzPolaczenieZArduino();
+
+
+
+            // interwał = 1 sekunda
+            CzasTrwania++;
+            Odstep++;
+            lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
+
+            if (Odstep > MaxOdstep && ObecnyStan.NazwaZdarzenia == "Produkcja")
+            {
+                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Nieokreślony").FirstOrDefault();
+                UstawStan(typDoUstawienia);
+            }
+            else if (Odstep <= MaxOdstep && ObecnyStan.NazwaZdarzenia != "Produkcja")
+            {
+                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Produkcja").FirstOrDefault();
+                UstawStan(typDoUstawienia);
+            }
+        }
+
+        private void SprawdzPolaczenieZArduino()
+        {
+            
+            String[] porty = System.IO.Ports.SerialPort.GetPortNames();
+            string myPort;
+            
+
+            if (arduino.IsOpen)
+            {
+                toolStripStatusLabel2.Text = "Połączenie z arduino: OK";
+
+            }
+            else
+            {
+                toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                foreach (var item in porty)
+                {
+                    myPort = item;
+                    try
+                    {
+                        arduino.PortName = myPort;
+                        arduino.Open();
+                    }
+                    catch (Exception)
+                    {
+
+                        toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                    }
+                    
+                }
+            }
+        }
+
+
 
         private void PopulateCmbStan()
         {
@@ -161,6 +204,8 @@ namespace Licznik_czasu
             lblCzasTrwania.Text = licznik.ToString();
         }
 
+        
+
         private void btnStartMaszyny_Click(object sender, EventArgs e)
         {
             /**
@@ -203,7 +248,7 @@ namespace Licznik_czasu
                 // ustawienia nasłuchiwania
                 try
                 {
-                    arduino.Open();
+                    SprawdzPolaczenieZArduino();
                     CzasTrwania = 0;
 
                     ObecnyStan = db.TypZdarzenia.Where(t => t.TypZdarzeniaId == (int)cmbStan.SelectedValue).FirstOrDefault();
@@ -218,7 +263,7 @@ namespace Licznik_czasu
                     btnStartMaszyny.Enabled = false;
                     timer1.Start();
                 }
-                catch(System.IO.IOException)
+                catch (System.IO.IOException)
                 {
                     MessageBox.Show("Brak połączenia z czujnikiem:\n1. Odłącz kabel usb.\n2. Podłącz go ponownie.\n\nJeżeli powyższe kroki nie rozwiążą problemu, skontaktuj się z autorem programu.",
                         "Brak połączenia z arduino!",
@@ -355,7 +400,11 @@ namespace Licznik_czasu
             try
             {
                 arduinoMessage = sp.ReadLine();
-                this.BeginInvoke(new EventHandler(czytajImpuls));
+                if (arduinoMessage == "1\r")
+                {
+                    this.BeginInvoke(new EventHandler(czytajImpuls));
+                }
+
             }
             catch (Exception ex)
             {

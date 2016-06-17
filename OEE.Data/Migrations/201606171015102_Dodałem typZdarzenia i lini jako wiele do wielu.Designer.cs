@@ -7,13 +7,13 @@ namespace OEE.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Dodanopołącznieliniiitypuzdarzenia : IMigrationMetadata
+    public sealed partial class DodałemtypZdarzeniailinijakowieledowielu : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Dodanopołącznieliniiitypuzdarzenia));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DodałemtypZdarzeniailinijakowieledowielu));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606081228070_Dodano połącznie linii i typu zdarzenia"; }
+            get { return "201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu"; }
         }
         
         string IMigrationMetadata.Source

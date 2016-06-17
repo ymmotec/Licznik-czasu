@@ -3,7 +3,7 @@ namespace OEE.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Dodanopołącznieliniiitypuzdarzenia : DbMigration
+    public partial class DodałemtypZdarzeniailinijakowieledowielu : DbMigration
     {
         public override void Up()
         {

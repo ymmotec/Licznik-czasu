@@ -74,6 +74,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
@@ -119,11 +120,6 @@
     <Compile Include="GenerujRaportForm.Designer.cs">
       <DependentUpon>GenerujRaportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="licznikDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>licznikDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="OpisAwariiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,17 +158,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Licznik czasu_TemporaryKey.pfx" />
-    <None Include="licznikDataSet.xsc">
-      <DependentUpon>licznikDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="licznikDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>licznikDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="licznikDataSet.xss">
-      <DependentUpon>licznikDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

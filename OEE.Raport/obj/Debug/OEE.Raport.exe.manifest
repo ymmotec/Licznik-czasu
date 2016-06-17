@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OEE.Data.dll" size="29184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OEE.Data.dll" size="27648">
       <assemblyIdentity name="OEE.Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>seXxrLS2+M+x2DNVm4B9sdbEkHtXkPO1tTIYd3zXKr8=</dsig:DigestValue>
+        <dsig:DigestValue>DZ4CUHwhrMpS/S43fD9aEdNnb7y1hHzHHu+QpihabPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jqR+zwZU5KcqLmAxeWZshgOK+pGQgH45brbfDwF1J6U=</dsig:DigestValue>
+        <dsig:DigestValue>XM6vwjLnH3Ad+SHq3wJvOin2kNt0fu8oD4qWTGHgepc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
