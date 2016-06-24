@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="OEE.Raport.exe" version="1.0.1.4" publicKeyToken="34534c2f392fddef" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="OEE.Raport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="OEE.Raport.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5196496">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7W69dJBS+QGPZplnGuVGmt7fCGz4sb1CVrvpxOf2/wU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="621264">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ob9snjgg6D9D6fIN19mwozYqkxRvCv4LEzAYXi1RsMs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OEE.Data.dll" size="33792">
+      <assemblyIdentity name="OEE.Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iXcATUBUv2idAUhSmtiFM9AfDb34WlE0kOJ0HPZ4OZM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OEE.Raport.exe" size="23496">
+      <assemblyIdentity name="OEE.Raport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>f6IyTVeycPFaAsayivb1y3D+mOCXeT9daMm5BhsJsmQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="OEE.Raport.exe.config" size="1942">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gxmRxxS6W56c1JRHYaJXjUG6GGlqccyVoGNLRZfsWHY=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=TBGORZOW\tgaladyk" issuerKeyHash="36d6e60af1a908c1e1d2fcae1f85484b9d8c8c59" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>uWXg6pJncTCePSF4dcKp0m+q8/x9nNQNvjBmuWQk6MU=</DigestValue></Reference></SignedInfo><SignatureValue>UsYOAjuIK2TduFyAznAWMhzE5rdxMpUY6bl6hUUTADcbi62TyJ9wRmm6OqN7er2AoH2SJSabvskP7gqoSxgp4c0Zv+UKb3047pPHZB08MarpfjveodzMSxKlPaZ6jpisvUfcfw+G4KhX+eMMj6yU9mnlkJo1ANvd4unz1Qu/ieQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>reRiTVmmDVDWjdz1FmsxSjTqnEkdeFHY5MIW0DlsQ1k98gCii62boN8RqV0fmrW3U8eZBbOVlNfPyHGox/177BSRQ0YbQSEAhhaZjB8vcZvO1vNKKak18X8q7a8o3AGc09NG1iLzhOMLDZXAKdYGsTn/axbov1Flw+a0zx7aTg8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c5e82464b96630be0dd49c7dfcf3aa6fd2a9c27578213d9e30716792eae065b9" Description="" Url=""><as:assemblyIdentity name="OEE.Raport.exe" version="1.0.1.4" publicKeyToken="34534c2f392fddef" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=TBGORZOW\tgaladyk</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>J4h6KFVwFlW3R0oCqoVfnNnseLMT54laMsY8wPXFl2I=</DigestValue></Reference></SignedInfo><SignatureValue>RQUM9CJQn7MpZPRFRE7HwFTu/F0Jk1MGozrvRpbGj1samRSicbOKV2vOAsZR2S+j8YcLEOWlnpKd0uTEEfcsjgJH5kFZCwT/RmQdq7g9yd5xt78nNou+mOzRLcmUZiJtnMg5MaxeayUGWTYaDNCVeEC5vk1zNBO8QQJ0OgZ7iy8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>reRiTVmmDVDWjdz1FmsxSjTqnEkdeFHY5MIW0DlsQ1k98gCii62boN8RqV0fmrW3U8eZBbOVlNfPyHGox/177BSRQ0YbQSEAhhaZjB8vcZvO1vNKKak18X8q7a8o3AGc09NG1iLzhOMLDZXAKdYGsTn/axbov1Flw+a0zx7aTg8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQF5atOYdocKxK5s07ZRg7iDANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIAVABCAEcATwBSAFoATwBXAFwAdABnAGEAbABhAGQAeQBrMB4XDTE2MDMxNDExMTYyNloXDTE3MDMxNDE3MTYyNlowLTErMCkGA1UEAx4iAFQAQgBHAE8AUgBaAE8AVwBcAHQAZwBhAGwAYQBkAHkAazCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAreRiTVmmDVDWjdz1FmsxSjTqnEkdeFHY5MIW0DlsQ1k98gCii62boN8RqV0fmrW3U8eZBbOVlNfPyHGox/177BSRQ0YbQSEAhhaZjB8vcZvO1vNKKak18X8q7a8o3AGc09NG1iLzhOMLDZXAKdYGsTn/axbov1Flw+a0zx7aTg8CAwEAATANBgkqhkiG9w0BAQsFAAOBgQCME7HWWrwbwaRh86Ex0Yy7XTL6Jzhqq1sQx0XmDSxtAdji24Raf9qyggKXUVaXJiKvGEVLy+lN2qLkn047k8ALAyYe2wsyB4H0/kX2TAgyP397qPR6cRiqEYT2p/WcK9SpSqVplmLEP68PpVdbaXALdBRvwZPp+Gfe/b/embHKwQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

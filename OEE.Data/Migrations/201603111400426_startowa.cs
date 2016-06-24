@@ -10,54 +10,54 @@ namespace OEE.Data.Migrations
             CreateTable(
                 "dbo.Stan",
                 c => new
-                    {
-                        StanId = c.Int(nullable: false, identity: true),
-                        GodzinaUruchomienia = c.DateTime(nullable: false),
-                        CzasTrwania = c.Int(nullable: false),
-                        Brygada = c.Int(nullable: false),
-                        LiniaProdukcyjna = c.String(nullable: false),
-                        OpisAwarii = c.String(),
-                        OpisPrzezbrojenia = c.String(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
-                        Maszyna_MaszynaId = c.Int(),
-                        TypZdarzenia_TypZdarzeniaId = c.Int(nullable: false),
-                    })
+                {
+                    StanId = c.Int(nullable: false, identity: true),
+                    GodzinaUruchomienia = c.DateTime(nullable: false),
+                    CzasTrwania = c.Int(nullable: false),
+                    Brygada = c.Int(nullable: false),
+                    LiniaProdukcyjna = c.String(nullable: false),
+                    OpisAwarii = c.String(),
+                    OpisPrzezbrojenia = c.String(),
+                    Discriminator = c.String(nullable: false, maxLength: 128),
+                    Maszyna_MaszynaId = c.Int(),
+                    TypZdarzenia_TypZdarzeniaId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.StanId)
                 .ForeignKey("dbo.Maszyny", t => t.Maszyna_MaszynaId)
                 .ForeignKey("dbo.TypZdarzenias", t => t.TypZdarzenia_TypZdarzeniaId, cascadeDelete: true)
                 .Index(t => t.Maszyna_MaszynaId)
                 .Index(t => t.TypZdarzenia_TypZdarzeniaId);
-            
+
             CreateTable(
                 "dbo.Maszyny",
                 c => new
-                    {
-                        MaszynaId = c.Int(nullable: false, identity: true),
-                        NazwaMaszyny = c.String(nullable: false, maxLength: 100),
-                        Linia_LiniaId = c.Int(),
-                    })
+                {
+                    MaszynaId = c.Int(nullable: false, identity: true),
+                    NazwaMaszyny = c.String(nullable: false, maxLength: 100),
+                    Linia_LiniaId = c.Int(),
+                })
                 .PrimaryKey(t => t.MaszynaId)
                 .ForeignKey("dbo.Linia", t => t.Linia_LiniaId)
                 .Index(t => t.Linia_LiniaId);
-            
+
             CreateTable(
                 "dbo.Linia",
                 c => new
-                    {
-                        LiniaId = c.Int(nullable: false, identity: true),
-                        NazwaLinii = c.String(nullable: false, maxLength: 100),
-                    })
+                {
+                    LiniaId = c.Int(nullable: false, identity: true),
+                    NazwaLinii = c.String(nullable: false, maxLength: 100),
+                })
                 .PrimaryKey(t => t.LiniaId);
-            
+
             CreateTable(
                 "dbo.TypZdarzenias",
                 c => new
-                    {
-                        TypZdarzeniaId = c.Int(nullable: false, identity: true),
-                        NazwaZdarzenia = c.String(nullable: false, maxLength: 50),
-                    })
+                {
+                    TypZdarzeniaId = c.Int(nullable: false, identity: true),
+                    NazwaZdarzenia = c.String(nullable: false, maxLength: 50),
+                })
                 .PrimaryKey(t => t.TypZdarzeniaId);
-            
+
         }
         
         public override void Down()

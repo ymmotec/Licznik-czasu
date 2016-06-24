@@ -36,12 +36,6 @@
             this.generujRaportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCzasTrwania = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dgvListaZdarzen = new System.Windows.Forms.DataGridView();
-            this.stanIdDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypZdarzeniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GodzinaUruchomieniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblUruchomionoo = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
@@ -67,14 +61,22 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvListaZdarzen = new System.Windows.Forms.DataGridView();
+            this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GodzinaUruchomieniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypZdarzeniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stanIdDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grBoxBrygada.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -131,69 +133,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // dgvListaZdarzen
-            // 
-            this.dgvListaZdarzen.AllowUserToAddRows = false;
-            this.dgvListaZdarzen.AllowUserToDeleteRows = false;
-            this.dgvListaZdarzen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvListaZdarzen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaZdarzen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stanIdDataGridViewColumn,
-            this.TypZdarzeniaDataGridViewColumn,
-            this.GodzinaUruchomieniaDataGridViewColumn,
-            this.CzasTrwaniaDataGridViewColumn,
-            this.BrygadaDataGridViewColumn});
-            this.dgvListaZdarzen.Location = new System.Drawing.Point(12, 306);
-            this.dgvListaZdarzen.MultiSelect = false;
-            this.dgvListaZdarzen.Name = "dgvListaZdarzen";
-            this.dgvListaZdarzen.ReadOnly = true;
-            this.dgvListaZdarzen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaZdarzen.Size = new System.Drawing.Size(859, 302);
-            this.dgvListaZdarzen.TabIndex = 6;
-            this.dgvListaZdarzen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // stanIdDataGridViewColumn
-            // 
-            this.stanIdDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stanIdDataGridViewColumn.DataPropertyName = "StanId";
-            this.stanIdDataGridViewColumn.HeaderText = "StanID";
-            this.stanIdDataGridViewColumn.Name = "stanIdDataGridViewColumn";
-            this.stanIdDataGridViewColumn.ReadOnly = true;
-            this.stanIdDataGridViewColumn.Visible = false;
-            // 
-            // TypZdarzeniaDataGridViewColumn
-            // 
-            this.TypZdarzeniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TypZdarzeniaDataGridViewColumn.DataPropertyName = "NazwaZdarzenia";
-            this.TypZdarzeniaDataGridViewColumn.HeaderText = "Typ zdarzenia";
-            this.TypZdarzeniaDataGridViewColumn.Name = "TypZdarzeniaDataGridViewColumn";
-            this.TypZdarzeniaDataGridViewColumn.ReadOnly = true;
-            // 
-            // GodzinaUruchomieniaDataGridViewColumn
-            // 
-            this.GodzinaUruchomieniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GodzinaUruchomieniaDataGridViewColumn.DataPropertyName = "GodzinaUruchomienia";
-            this.GodzinaUruchomieniaDataGridViewColumn.HeaderText = "Godzina uruchomienia";
-            this.GodzinaUruchomieniaDataGridViewColumn.Name = "GodzinaUruchomieniaDataGridViewColumn";
-            this.GodzinaUruchomieniaDataGridViewColumn.ReadOnly = true;
-            // 
-            // CzasTrwaniaDataGridViewColumn
-            // 
-            this.CzasTrwaniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CzasTrwaniaDataGridViewColumn.DataPropertyName = "CzasTrwania";
-            this.CzasTrwaniaDataGridViewColumn.HeaderText = "Czas trwania";
-            this.CzasTrwaniaDataGridViewColumn.Name = "CzasTrwaniaDataGridViewColumn";
-            this.CzasTrwaniaDataGridViewColumn.ReadOnly = true;
-            // 
-            // BrygadaDataGridViewColumn
-            // 
-            this.BrygadaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BrygadaDataGridViewColumn.DataPropertyName = "Brygada";
-            this.BrygadaDataGridViewColumn.HeaderText = "Brygada";
-            this.BrygadaDataGridViewColumn.Name = "BrygadaDataGridViewColumn";
-            this.BrygadaDataGridViewColumn.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -319,7 +258,6 @@
             this.rdbBrygada1.Name = "rdbBrygada1";
             this.rdbBrygada1.Size = new System.Drawing.Size(117, 24);
             this.rdbBrygada1.TabIndex = 14;
-            this.rdbBrygada1.TabStop = true;
             this.rdbBrygada1.Text = "Brygada nr 1";
             this.rdbBrygada1.UseVisualStyleBackColor = true;
             this.rdbBrygada1.CheckedChanged += new System.EventHandler(this.rdbBrygada_CheckedChanged);
@@ -332,7 +270,6 @@
             this.rdbBrygada2.Name = "rdbBrygada2";
             this.rdbBrygada2.Size = new System.Drawing.Size(117, 24);
             this.rdbBrygada2.TabIndex = 15;
-            this.rdbBrygada2.TabStop = true;
             this.rdbBrygada2.Text = "Brygada nr 2";
             this.rdbBrygada2.UseVisualStyleBackColor = true;
             this.rdbBrygada2.CheckedChanged += new System.EventHandler(this.rdbBrygada_CheckedChanged);
@@ -345,7 +282,6 @@
             this.rdbBrygada3.Name = "rdbBrygada3";
             this.rdbBrygada3.Size = new System.Drawing.Size(117, 24);
             this.rdbBrygada3.TabIndex = 16;
-            this.rdbBrygada3.TabStop = true;
             this.rdbBrygada3.Text = "Brygada nr 3";
             this.rdbBrygada3.UseVisualStyleBackColor = true;
             this.rdbBrygada3.CheckedChanged += new System.EventHandler(this.rdbBrygada_CheckedChanged);
@@ -431,8 +367,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(299, 17);
-            this.toolStripStatusLabel1.Text = "Autor: Tomasz Gaładyk; tgaladyk@borne-furniture.com";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(128, 17);
+            this.toolStripStatusLabel1.Text = "Autor: Tomasz Gaładyk";
             // 
             // toolStripStatusLabel2
             // 
@@ -444,6 +380,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel5,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 621);
@@ -452,11 +390,84 @@
             this.statusStrip1.TabIndex = 22;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusLabel4.Text = " | ";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(207, 17);
+            this.toolStripStatusLabel5.Text = "email: tgaladyk@borne-furniture.com";
+            // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(16, 17);
             this.toolStripStatusLabel3.Text = " | ";
+            // 
+            // dgvListaZdarzen
+            // 
+            this.dgvListaZdarzen.AllowUserToAddRows = false;
+            this.dgvListaZdarzen.AllowUserToDeleteRows = false;
+            this.dgvListaZdarzen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaZdarzen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stanIdDataGridViewColumn,
+            this.TypZdarzeniaDataGridViewColumn,
+            this.GodzinaUruchomieniaDataGridViewColumn,
+            this.CzasTrwaniaDataGridViewColumn,
+            this.BrygadaDataGridViewColumn});
+            this.dgvListaZdarzen.Location = new System.Drawing.Point(12, 318);
+            this.dgvListaZdarzen.MultiSelect = false;
+            this.dgvListaZdarzen.Name = "dgvListaZdarzen";
+            this.dgvListaZdarzen.ReadOnly = true;
+            this.dgvListaZdarzen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaZdarzen.Size = new System.Drawing.Size(859, 287);
+            this.dgvListaZdarzen.TabIndex = 6;
+            this.dgvListaZdarzen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // BrygadaDataGridViewColumn
+            // 
+            this.BrygadaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BrygadaDataGridViewColumn.DataPropertyName = "Brygada";
+            this.BrygadaDataGridViewColumn.HeaderText = "Brygada";
+            this.BrygadaDataGridViewColumn.Name = "BrygadaDataGridViewColumn";
+            this.BrygadaDataGridViewColumn.ReadOnly = true;
+            // 
+            // CzasTrwaniaDataGridViewColumn
+            // 
+            this.CzasTrwaniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CzasTrwaniaDataGridViewColumn.DataPropertyName = "CzasTrwania";
+            this.CzasTrwaniaDataGridViewColumn.HeaderText = "Czas trwania";
+            this.CzasTrwaniaDataGridViewColumn.Name = "CzasTrwaniaDataGridViewColumn";
+            this.CzasTrwaniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // GodzinaUruchomieniaDataGridViewColumn
+            // 
+            this.GodzinaUruchomieniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GodzinaUruchomieniaDataGridViewColumn.DataPropertyName = "GodzinaUruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.HeaderText = "Godzina uruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.Name = "GodzinaUruchomieniaDataGridViewColumn";
+            this.GodzinaUruchomieniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // TypZdarzeniaDataGridViewColumn
+            // 
+            this.TypZdarzeniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypZdarzeniaDataGridViewColumn.DataPropertyName = "NazwaZdarzenia";
+            this.TypZdarzeniaDataGridViewColumn.HeaderText = "Typ zdarzenia";
+            this.TypZdarzeniaDataGridViewColumn.Name = "TypZdarzeniaDataGridViewColumn";
+            this.TypZdarzeniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // stanIdDataGridViewColumn
+            // 
+            this.stanIdDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stanIdDataGridViewColumn.DataPropertyName = "StanId";
+            this.stanIdDataGridViewColumn.HeaderText = "StanID";
+            this.stanIdDataGridViewColumn.Name = "stanIdDataGridViewColumn";
+            this.stanIdDataGridViewColumn.ReadOnly = true;
+            this.stanIdDataGridViewColumn.Visible = false;
             // 
             // Form1
             // 
@@ -465,6 +476,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(921, 643);
+            this.Controls.Add(this.dgvListaZdarzen);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.grBoxBrygada);
@@ -472,7 +484,6 @@
             this.Controls.Add(this.btnZmienStan);
             this.Controls.Add(this.cmbStan);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvListaZdarzen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -481,7 +492,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -491,6 +501,7 @@
             this.groupBox3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaZdarzen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,7 +513,6 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.Label lblCzasTrwania;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dgvListaZdarzen;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblUruchomionoo;
         private System.Windows.Forms.Label lblOpis;
@@ -528,15 +538,18 @@
         private System.Windows.Forms.Label lblBiezacyCzasCyklu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.DataGridView dgvListaZdarzen;
         private System.Windows.Forms.DataGridViewTextBoxColumn stanIdDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypZdarzeniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn GodzinaUruchomieniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CzasTrwaniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrygadaDataGridViewColumn;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }
 

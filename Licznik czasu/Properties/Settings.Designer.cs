@@ -25,7 +25,7 @@ namespace Licznik_czasu.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public string czasOczekiwania {
             get {
                 return ((string)(this["czasOczekiwania"]));

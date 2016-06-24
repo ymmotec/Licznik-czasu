@@ -17,28 +17,33 @@ namespace Licznik_czasu
 {
     public partial class Form1 : Form
     {
-        /// <summary>
-        /// Ilość sekund jaka upłynęła od ostatniego odczytu z arduino
-        /// </summary>
-        public int Odstep { get; set; }
 
-        /// <summary>
-        /// Maksymalna liczba sekund pomiędzy sztukami
-        /// </summary>
-        public int MaxOdstep { get; set; }
-
-        /// <summary>
-        /// Nazwa linii produkcyjnej
-        /// </summary>
+        private List<Awaria> listaAwariiBezOpisu;
+        
+        public int OdstepPomiedzySygnalamiArduino { get; set; }
+        public int MaxOdstepPomiedzySygnalamiArduino { get; set; }
         public string LiniaProdukcyjna { get; set; }
 
         /// <summary>
         /// Port na którym nadaje arduino
         /// ustawiony jest w App.config
         /// </summary>
-        public string ArduinoPort { get; set; }
+        //public string ArduinoPort { get; set; }
+
         #region properties
         //właściwości formularza
+        public List<Awaria> ListaAwariiBezOpisu {
+            get
+            {
+                return listaAwariiBezOpisu;
+            }
+            set
+            {
+                listaAwariiBezOpisu = value;
+            }
+        }
+
+        
         public TypZdarzenia ObecnyStan { get; set; }
         public DateTime CzasUruchomienia { get; set; }
         public int CzasTrwania { get; set; }
@@ -50,35 +55,45 @@ namespace Licznik_czasu
         /// Początek zmiany służy do obliczeenia wydajności maszyny od początku zmiany nr 1, 2, 3
         /// </summary>
         public DateTime PoczatekZmiany { get; set; }
-
-        #endregion
-
+        
+        
         //dane z arduino
         String arduinoMessage;
         int licznikSztuk;
         private List<string> COMports;
 
+        #endregion
+
+
+
         public Form1()
         {
             InitializeComponent();
             timer1.Interval = 1000;
-            //MaxOdstep = Int32.Parse(ConfigurationManager.AppSettings["czasOczekiwania"]);
-            MaxOdstep = Int32.Parse(Properties.Settings.Default.czasOczekiwania);
-            //ArduinoPort = ConfigurationManager.AppSettings["arduinoPort"];
+            
+            MaxOdstepPomiedzySygnalamiArduino = Int32.Parse(Properties.Settings.Default.czasOczekiwania);
+
             LiniaProdukcyjna = Properties.Settings.Default.nazwaLiniiProdukcyjnej;
             this.Text = "Licznik czasu pracy maszyny v" + Application.ProductVersion;
             COMports = new List<string>();
+            //InitializeListaAwariiBezOpisu();
         }
 
+        //private void InitializeListaAwariiBezOpisu()
+        //{
+        //    DateTime teraz = DateTime.Now;
+        //    DateTime zakresCzasuDoPobrania = teraz.AddHours(-8);
+           
+        //    List<Awaria> listaAwarii = db.Awaria.Where(l => l.LiniaProdukcyjna == LiniaProdukcyjna
+        //    && l.Maszyna == null
+        //    && String.IsNullOrEmpty(l.OpisAwarii)
+        //    && l.GodzinaUruchomienia > zakresCzasuDoPobrania).ToList();
+        //    ListaAwariiBezOpisu = listaAwarii;
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
-            //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
-            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.Stan' . Możesz go przenieść lub usunąć.
-            //this.stanTableAdapter.Fill(this.licznikDataSet.Stan);
-            //// TODO: Ten wiersz kodu wczytuje dane do tabeli 'licznikDataSet.TypZdarzenias' . Możesz go przenieść lub usunąć.
-            //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+            
             PopulateCmbStan();
             PopulateDgvListaZdarzen();
 
@@ -111,36 +126,38 @@ namespace Licznik_czasu
 
             // interwał = 1 sekunda
             CzasTrwania++;
-            Odstep++;
+            OdstepPomiedzySygnalamiArduino++;
             lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
 
-            if (Odstep > MaxOdstep && ObecnyStan.NazwaZdarzenia == "Produkcja")
+            if (OdstepPomiedzySygnalamiArduino > MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia == "Produkcja")
             {
                 var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Nieokreślony").FirstOrDefault();
                 UstawStan(typDoUstawienia);
             }
-            else if (Odstep <= MaxOdstep && ObecnyStan.NazwaZdarzenia != "Produkcja")
+            else if (OdstepPomiedzySygnalamiArduino <= MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia != "Produkcja")
             {
                 var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Produkcja").FirstOrDefault();
                 UstawStan(typDoUstawienia);
             }
         }
 
-        private void SprawdzPolaczenieZArduino()
+        private bool SprawdzPolaczenieZArduino()
         {
-            
+
             String[] porty = System.IO.Ports.SerialPort.GetPortNames();
             string myPort;
-            
+
 
             if (arduino.IsOpen)
             {
                 toolStripStatusLabel2.Text = "Połączenie z arduino: OK";
-
+                errorProvider1.SetError(btnStartMaszyny, "");
+                return true;
             }
             else
             {
                 toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
                 foreach (var item in porty)
                 {
                     myPort = item;
@@ -148,14 +165,17 @@ namespace Licznik_czasu
                     {
                         arduino.PortName = myPort;
                         arduino.Open();
+                        errorProvider1.SetError(btnStartMaszyny, "");
+                        return true;
                     }
                     catch (Exception)
                     {
 
                         toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                        errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
                     }
-                    
-                }
+
+                }return false;
             }
         }
 
@@ -204,7 +224,7 @@ namespace Licznik_czasu
             lblCzasTrwania.Text = licznik.ToString();
         }
 
-        
+
 
         private void btnStartMaszyny_Click(object sender, EventArgs e)
         {
@@ -225,11 +245,16 @@ namespace Licznik_czasu
             {
                 errorProvider1.SetError(cmbStan, "Proszę wybrać stan.");
             }
-            else
+            else if(!SprawdzPolaczenieZArduino())
+            {
+                errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z arduino");
+            }
+            else 
             {
                 // formularz został wypełniony więc mogę uruchomić licznik
                 errorProvider1.SetError(grBoxBrygada, "");
                 errorProvider1.SetError(cmbStan, "");
+                errorProvider1.SetError(btnStartMaszyny, "");
 
                 // sprawdzam która brygada została wybrana i ustawiam właściwość Brygada
                 if (rdbBrygada1.Checked == true)
@@ -244,6 +269,7 @@ namespace Licznik_czasu
                 {
                     Brygada = 3;
                 }
+
 
                 // ustawienia nasłuchiwania
                 try
@@ -415,11 +441,11 @@ namespace Licznik_czasu
         private void czytajImpuls(object sender, EventArgs e)
         {
             licznikSztuk++;
-            lblBiezacyCzasCyklu.Text = Odstep.ToString();
+            lblBiezacyCzasCyklu.Text = OdstepPomiedzySygnalamiArduino.ToString();
 
             try
             {
-                Tempo = 60F / Odstep;
+                Tempo = 60F / OdstepPomiedzySygnalamiArduino;
             }
             catch (DivideByZeroException ex)
             {
@@ -428,7 +454,7 @@ namespace Licznik_czasu
             }
 
             lblIloscCykliNaMinute.Text = string.Format("{0:0.0}", Tempo) + " cykli/minutę";
-            Odstep = 0;
+            OdstepPomiedzySygnalamiArduino = 0;
             lblLicznikSztuk.Text = licznikSztuk.ToString();
 
         }
