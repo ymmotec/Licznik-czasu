@@ -42,17 +42,35 @@ namespace Licznik_czasu
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using (var db = new LicznikDataModel())
+            
+            if (sprawdzFormularz())
             {
-                Awaria aw = db.Awaria.Where(a => a.StanId == WybranaAwaria.StanId).FirstOrDefault();
-                aw.Maszyna = db.Maszyna.Where(m => m.MaszynaId == (int)cmbMaszyny.SelectedValue).FirstOrDefault();
-                aw.OpisAwarii = txtOpis.Text;
-                aw.TypZdarzenia = db.TypZdarzenia.Where(t => t.TypZdarzeniaId == WybranaAwaria.TypZdarzenia.TypZdarzeniaId).FirstOrDefault();
-                db.SaveChanges();
-            }
+                using (var db = new LicznikDataModel())
+                {
+                    Awaria aw = db.Awaria.Where(a => a.StanId == WybranaAwaria.StanId).FirstOrDefault();
+                    aw.Maszyna = db.Maszyna.Where(m => m.MaszynaId == (int)cmbMaszyny.SelectedValue).FirstOrDefault();
+                    aw.OpisAwarii = txtOpis.Text;
+                    aw.TypZdarzenia = db.TypZdarzenia.Where(t => t.TypZdarzeniaId == WybranaAwaria.TypZdarzenia.TypZdarzeniaId).FirstOrDefault();
+                    db.SaveChanges();
+                }
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close(); 
+            }
+        }
+
+        private bool sprawdzFormularz()
+        {
+            if (cmbMaszyny.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbMaszyny, "Proszę wybrać z listy!!");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbMaszyny, "");
+                return true;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

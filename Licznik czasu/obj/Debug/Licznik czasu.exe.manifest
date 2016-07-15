@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Licznik czasu.exe" version="1.0.1.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Licznik czasu.exe" version="1.0.1.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Licznik czasu" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Licznik czasu.exe" size="53168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Licznik czasu.exe" size="58288">
       <assemblyIdentity name="Licznik czasu" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Lj/QEbF2UshC9rD8o2jj9qFuwV/+kqtOZMpDsc7j6ho=</dsig:DigestValue>
+        <dsig:DigestValue>K5MgHA+V6q8IixLoOMxkGCnNx3DFpVo6y56zClnwW84=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,17 +85,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iXcATUBUv2idAUhSmtiFM9AfDb34WlE0kOJ0HPZ4OZM=</dsig:DigestValue>
+        <dsig:DigestValue>h8ANy71Z03JZYHiD/4rdlKncGGxAJtD93Xr5vFNI+wY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Licznik czasu.exe.config" size="3656">
+  <file name="Licznik czasu.exe.config" size="3905">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>IsK6puCFWV3+9T7pQlzz9Hwpih26+DZikthNcqPBrjI=</dsig:DigestValue>
+      <dsig:DigestValue>sDQtEQRmp/hp6y5L+CGnGWKmyqOFy8myV7YFVAGFTnY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

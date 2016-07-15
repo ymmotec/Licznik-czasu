@@ -65,11 +65,12 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvListaZdarzen = new System.Windows.Forms.DataGridView();
-            this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GodzinaUruchomieniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypZdarzeniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stanIdDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypZdarzeniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GodzinaUruchomieniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -428,29 +429,14 @@
             this.dgvListaZdarzen.TabIndex = 6;
             this.dgvListaZdarzen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // BrygadaDataGridViewColumn
+            // stanIdDataGridViewColumn
             // 
-            this.BrygadaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BrygadaDataGridViewColumn.DataPropertyName = "Brygada";
-            this.BrygadaDataGridViewColumn.HeaderText = "Brygada";
-            this.BrygadaDataGridViewColumn.Name = "BrygadaDataGridViewColumn";
-            this.BrygadaDataGridViewColumn.ReadOnly = true;
-            // 
-            // CzasTrwaniaDataGridViewColumn
-            // 
-            this.CzasTrwaniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CzasTrwaniaDataGridViewColumn.DataPropertyName = "CzasTrwania";
-            this.CzasTrwaniaDataGridViewColumn.HeaderText = "Czas trwania";
-            this.CzasTrwaniaDataGridViewColumn.Name = "CzasTrwaniaDataGridViewColumn";
-            this.CzasTrwaniaDataGridViewColumn.ReadOnly = true;
-            // 
-            // GodzinaUruchomieniaDataGridViewColumn
-            // 
-            this.GodzinaUruchomieniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GodzinaUruchomieniaDataGridViewColumn.DataPropertyName = "GodzinaUruchomienia";
-            this.GodzinaUruchomieniaDataGridViewColumn.HeaderText = "Godzina uruchomienia";
-            this.GodzinaUruchomieniaDataGridViewColumn.Name = "GodzinaUruchomieniaDataGridViewColumn";
-            this.GodzinaUruchomieniaDataGridViewColumn.ReadOnly = true;
+            this.stanIdDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stanIdDataGridViewColumn.DataPropertyName = "StanId";
+            this.stanIdDataGridViewColumn.HeaderText = "StanID";
+            this.stanIdDataGridViewColumn.Name = "stanIdDataGridViewColumn";
+            this.stanIdDataGridViewColumn.ReadOnly = true;
+            this.stanIdDataGridViewColumn.Visible = false;
             // 
             // TypZdarzeniaDataGridViewColumn
             // 
@@ -460,14 +446,33 @@
             this.TypZdarzeniaDataGridViewColumn.Name = "TypZdarzeniaDataGridViewColumn";
             this.TypZdarzeniaDataGridViewColumn.ReadOnly = true;
             // 
-            // stanIdDataGridViewColumn
+            // GodzinaUruchomieniaDataGridViewColumn
             // 
-            this.stanIdDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stanIdDataGridViewColumn.DataPropertyName = "StanId";
-            this.stanIdDataGridViewColumn.HeaderText = "StanID";
-            this.stanIdDataGridViewColumn.Name = "stanIdDataGridViewColumn";
-            this.stanIdDataGridViewColumn.ReadOnly = true;
-            this.stanIdDataGridViewColumn.Visible = false;
+            this.GodzinaUruchomieniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GodzinaUruchomieniaDataGridViewColumn.DataPropertyName = "GodzinaUruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.HeaderText = "Godzina uruchomienia";
+            this.GodzinaUruchomieniaDataGridViewColumn.Name = "GodzinaUruchomieniaDataGridViewColumn";
+            this.GodzinaUruchomieniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // CzasTrwaniaDataGridViewColumn
+            // 
+            this.CzasTrwaniaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CzasTrwaniaDataGridViewColumn.DataPropertyName = "CzasTrwania";
+            this.CzasTrwaniaDataGridViewColumn.HeaderText = "Czas trwania";
+            this.CzasTrwaniaDataGridViewColumn.Name = "CzasTrwaniaDataGridViewColumn";
+            this.CzasTrwaniaDataGridViewColumn.ReadOnly = true;
+            // 
+            // BrygadaDataGridViewColumn
+            // 
+            this.BrygadaDataGridViewColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BrygadaDataGridViewColumn.DataPropertyName = "Brygada";
+            this.BrygadaDataGridViewColumn.HeaderText = "Brygada";
+            this.BrygadaDataGridViewColumn.Name = "BrygadaDataGridViewColumn";
+            this.BrygadaDataGridViewColumn.ReadOnly = true;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
@@ -550,6 +555,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GodzinaUruchomieniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CzasTrwaniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrygadaDataGridViewColumn;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

@@ -5,10 +5,10 @@
     <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
   </configSections>
   <connectionStrings>
-    <add name="LicznikDataModel" connectionString="data source=10.8.99.105\;Initial Catalog=LicznikDataModel;User ID=licznik;Password=t; MultipleActiveResultSets=True;App=EntityFramework"
-      providerName="System.Data.SqlClient" />
-    <!--add name="LicznikDataModel" connectionString="data source=192.168.5.202\BFML;Initial Catalog=LicznikDataModel;User ID=licznik;Password=t; MultipleActiveResultSets=True;App=EntityFramework"
+    <!--<add name="LicznikDataModel" connectionString="data source=10.8.99.105\;Initial Catalog=LicznikDataModel;User ID=licznik;Password=t; MultipleActiveResultSets=True;App=EntityFramework"
       providerName="System.Data.SqlClient" />-->
+    <add name="LicznikDataModel" connectionString="data source=192.168.5.202\BFML;Initial Catalog=LicznikDataModel;User ID=licznik;Password=t; MultipleActiveResultSets=True;App=EntityFramework"
+      providerName="System.Data.SqlClient" />
     <!--<add name="Licznik_czasu.Properties.Settings.Licznik_czasu_LicznikDataModelConnectionString"
       connectionString="Data Source=192.168.5.202\BFML;Initial Catalog=LicznikDataModel;User ID=licznik;Password=t"
       providerName="System.Data.SqlClient" />

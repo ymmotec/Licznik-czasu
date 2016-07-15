@@ -19,7 +19,7 @@ namespace Licznik_czasu
     {
 
         private List<Awaria> listaAwariiBezOpisu;
-        
+
         public int OdstepPomiedzySygnalamiArduino { get; set; }
         public int MaxOdstepPomiedzySygnalamiArduino { get; set; }
         public string LiniaProdukcyjna { get; set; }
@@ -32,7 +32,8 @@ namespace Licznik_czasu
 
         #region properties
         //właściwości formularza
-        public List<Awaria> ListaAwariiBezOpisu {
+        public List<Awaria> ListaAwariiBezOpisu
+        {
             get
             {
                 return listaAwariiBezOpisu;
@@ -43,7 +44,7 @@ namespace Licznik_czasu
             }
         }
 
-        
+
         public TypZdarzenia ObecnyStan { get; set; }
         public DateTime CzasUruchomienia { get; set; }
         public int CzasTrwania { get; set; }
@@ -55,8 +56,8 @@ namespace Licznik_czasu
         /// Początek zmiany służy do obliczeenia wydajności maszyny od początku zmiany nr 1, 2, 3
         /// </summary>
         public DateTime PoczatekZmiany { get; set; }
-        
-        
+
+
         //dane z arduino
         String arduinoMessage;
         int licznikSztuk;
@@ -70,7 +71,8 @@ namespace Licznik_czasu
         {
             InitializeComponent();
             timer1.Interval = 1000;
-            
+            timer2.Interval = 500;
+
             MaxOdstepPomiedzySygnalamiArduino = Int32.Parse(Properties.Settings.Default.czasOczekiwania);
 
             LiniaProdukcyjna = Properties.Settings.Default.nazwaLiniiProdukcyjnej;
@@ -83,7 +85,7 @@ namespace Licznik_czasu
         //{
         //    DateTime teraz = DateTime.Now;
         //    DateTime zakresCzasuDoPobrania = teraz.AddHours(-8);
-           
+
         //    List<Awaria> listaAwarii = db.Awaria.Where(l => l.LiniaProdukcyjna == LiniaProdukcyjna
         //    && l.Maszyna == null
         //    && String.IsNullOrEmpty(l.OpisAwarii)
@@ -93,7 +95,7 @@ namespace Licznik_czasu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             PopulateCmbStan();
             PopulateDgvListaZdarzen();
 
@@ -111,19 +113,41 @@ namespace Licznik_czasu
             cmbStan.Enabled = true;
             UpdateStateLabels("Czekam", DateTime.Now, 0);
             licznikSztuk = 0;
+            timer2.Start();
 
         }
 
+        private string AutodetectArduinoPort()
+        {
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
 
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
+                {
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
+                    {
+                        return deviceId;
+                    }
+                }
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
+            }
+
+            return null;
+        }
 
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            SprawdzPolaczenieZArduino();
-
-
-
             // interwał = 1 sekunda
             CzasTrwania++;
             OdstepPomiedzySygnalamiArduino++;
@@ -141,6 +165,11 @@ namespace Licznik_czasu
             }
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            SprawdzPolaczenieZArduino();
+        }
+
         private bool SprawdzPolaczenieZArduino()
         {
 
@@ -156,26 +185,45 @@ namespace Licznik_czasu
             }
             else
             {
-                toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
-                errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
-                foreach (var item in porty)
+                try
                 {
-                    myPort = item;
-                    try
-                    {
-                        arduino.PortName = myPort;
-                        arduino.Open();
-                        errorProvider1.SetError(btnStartMaszyny, "");
-                        return true;
-                    }
-                    catch (Exception)
-                    {
+                    myPort = AutodetectArduinoPort();
+                    arduino.PortName = myPort;
+                    arduino.Open();
+                    errorProvider1.SetError(btnStartMaszyny, "");
+                    toolStripStatusLabel2.Text = "Połączenie z arduino: OK";
+                    return true;
 
-                        toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
-                        errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
-                    }
+                }
+                catch (Exception)
+                {
 
-                }return false;
+                    toolStripStatusLabel2.Text = "Połączenie z arduino: Brak!!";
+                    errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
+                    return false;
+                }
+                //toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                //errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
+                //foreach (var item in porty)
+                //{
+                //    myPort = item;
+                //    try
+                //    {
+                //        arduino.PortName = myPort;
+                //        arduino.Open();
+                //        errorProvider1.SetError(btnStartMaszyny, "");
+                //        toolStripStatusLabel2.Text = "Połączenie z arduino: OK";
+                //        return true;
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //        toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
+                //        errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
+                //    }
+
+                //}
+                //return false;
             }
         }
 
@@ -191,18 +239,25 @@ namespace Licznik_czasu
 
         private void PopulateDgvListaZdarzen()
         {
-            List<Stan> listaStanow = db.Stan.Take(500).Where(s => s.LiniaProdukcyjna == LiniaProdukcyjna).ToList();
-            var lista = listaStanow.Select(l => new { l.StanId, l.TypZdarzenia.NazwaZdarzenia, l.GodzinaUruchomienia, l.CzasTrwania, l.Brygada }).OrderByDescending(l => l.GodzinaUruchomienia).ToList();
+            List<Stan> listaStanow = db.Stan.Where(s => s.LiniaProdukcyjna == LiniaProdukcyjna).OrderByDescending(s => s.GodzinaUruchomienia).Take(500).ToList();
+            var lista = listaStanow.Select(l => new { l.StanId, l.TypZdarzenia.NazwaZdarzenia, l.GodzinaUruchomienia, l.CzasTrwania, l.Brygada }).ToList();
             dgvListaZdarzen.DataSource = lista;
         }
 
 
         private void btnZmienStan_Click(object sender, EventArgs e)
         {
-            var typDoUstawienia = db.TypZdarzenia.Where(t => t.TypZdarzeniaId == (int)cmbStan.SelectedValue).FirstOrDefault();
-            //using (LicznikDataModel db = new LicznikDataModel())
+            if (cmbStan.SelectedIndex != -1)
+            {
+                errorProvider1.SetError(cmbStan, "");
+                var typDoUstawienia = db.TypZdarzenia.Where(t => t.TypZdarzeniaId == (int)cmbStan.SelectedValue).FirstOrDefault();
+                UstawStan(typDoUstawienia);
+            }
+            else
+            {
+                errorProvider1.SetError(cmbStan, "Proszę wybrać stan z listy!!!");
+            }
 
-            UstawStan(typDoUstawienia);
         }
 
 
@@ -245,11 +300,11 @@ namespace Licznik_czasu
             {
                 errorProvider1.SetError(cmbStan, "Proszę wybrać stan.");
             }
-            else if(!SprawdzPolaczenieZArduino())
+            else if (!SprawdzPolaczenieZArduino())
             {
                 errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z arduino");
             }
-            else 
+            else
             {
                 // formularz został wypełniony więc mogę uruchomić licznik
                 errorProvider1.SetError(grBoxBrygada, "");
@@ -308,7 +363,7 @@ namespace Licznik_czasu
         /// Ustawia stan obecny maszyny
         /// </summary>
         /// <param name="stan">Nowy stan maszyny</param>
-        private void UstawStan(TypZdarzenia nowyStan)
+        private async void UstawStan(TypZdarzenia nowyStan)
         {
             if (ObecnyStan != null)
             {
@@ -324,10 +379,9 @@ namespace Licznik_czasu
                 else if (ObecnyStan.NazwaZdarzenia == "Awaria")
                 {
                     // typ ObecnyStan do zapisania to awaria zapisujemy obiekt awarii
+
                     Awaria nowaAwaria = new Awaria { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
-                    db.Awaria.Add(nowaAwaria);
-                    db.SaveChanges();
-                    PopulateDgvListaZdarzen();
+
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
@@ -338,14 +392,18 @@ namespace Licznik_czasu
                     CzasTrwania = 0;
                     cmbStan.SelectedIndex = -1;
                     btnZmienStan.Enabled = false;
+
+                    db.Awaria.Add(nowaAwaria);
+                    await db.SaveChangesAsync();
+
+                    PopulateDgvListaZdarzen();
                 }
                 else if (ObecnyStan.NazwaZdarzenia == "Przezbrojenie")
                 {
                     // typ ObecnyStan to Przezbrojenie zapisujemy obiekt przezbrojenie
+
                     Przezbrojenie nowePrzezbrojenie = new Przezbrojenie { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
-                    db.Przezbrojenia.Add(nowePrzezbrojenie);
-                    db.SaveChanges();
-                    PopulateDgvListaZdarzen();
+
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
@@ -356,16 +414,18 @@ namespace Licznik_czasu
                     CzasTrwania = 0;
                     cmbStan.SelectedIndex = -1;
                     btnZmienStan.Enabled = false;
+
+                    db.Przezbrojenia.Add(nowePrzezbrojenie);
+                    await db.SaveChangesAsync();
+
+                    PopulateDgvListaZdarzen();
                 }
                 else
                 {
                     // zapisujemy stan obecny
                     Stan stanDoZapisania = new Stan { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
-                    db.Stan.Add(stanDoZapisania);
-                    db.SaveChanges();
-                    PopulateDgvListaZdarzen();
+
                     // ustawiam nowy stan obecny
-                    DateTime godz = DateTime.Now;
                     ObecnyStan = nowyStan;
                     CzasUruchomienia = DateTime.Now;
                     UpdateStateLabels(ObecnyStan.NazwaZdarzenia, CzasUruchomienia, CzasTrwania);
@@ -374,13 +434,18 @@ namespace Licznik_czasu
                     CzasTrwania = 0;
                     cmbStan.SelectedIndex = -1;
                     btnZmienStan.Enabled = false;
+
+                    db.Stan.Add(stanDoZapisania);
+                    await db.SaveChangesAsync();
+
+                    PopulateDgvListaZdarzen();
                 }
             }
 
         }
 
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // po kliknięciu wiersza otwieramy okno edycji
             int stanID = (int)dgvListaZdarzen.Rows[e.RowIndex].Cells[stanIdDataGridViewColumn.Name].Value;
@@ -409,7 +474,7 @@ namespace Licznik_czasu
                     {
                         przezbr = danePrzezbrojenia.WybranePrzezbrojenie;
                         db.Entry(przezbr).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                     }
                 }
                 else
@@ -459,7 +524,7 @@ namespace Licznik_czasu
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private async void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Zapisuję ostatni stan.
             if (ObecnyStan != null)
@@ -468,19 +533,19 @@ namespace Licznik_czasu
                 {
                     Awaria nowaAwaria = new Awaria { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Awaria.Add(nowaAwaria);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                 }
                 else if (ObecnyStan.NazwaZdarzenia == "Przezbrojenie")
                 {
                     Przezbrojenie nowePrzezbrojenie = new Przezbrojenie { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Przezbrojenia.Add(nowePrzezbrojenie);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                 }
                 else
                 {
                     Stan stanDoZapisania = new Stan { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
                     db.Stan.Add(stanDoZapisania);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                 }
             }
             //zamykam połączenie arduino
@@ -556,6 +621,8 @@ namespace Licznik_czasu
             DodajMaszynyForm nowaMaszyna = new DodajMaszynyForm();
             nowaMaszyna.ShowDialog();
         }
+
+
 
 
 
