@@ -117,6 +117,22 @@ namespace Licznik_czasu
 
         }
 
+
+        private void PopulateCmbStan()
+        {
+            List<TypZdarzenia> listaTypowZdarzen = db.TypZdarzenia.ToList();
+            cmbStan.DataSource = listaTypowZdarzen;
+            cmbStan.DisplayMember = "NazwaZdarzenia";
+            cmbStan.ValueMember = "TypZdarzeniaId";
+        }
+
+        private void PopulateDgvListaZdarzen()
+        {
+            List<Stan> listaStanow = db.Stan.Where(s => s.LiniaProdukcyjna == LiniaProdukcyjna).OrderByDescending(s => s.GodzinaUruchomienia).Take(500).ToList();
+            var lista = listaStanow.Select(l => new { l.StanId, l.TypZdarzenia.NazwaZdarzenia, l.GodzinaUruchomienia, l.CzasTrwania, l.Brygada }).ToList();
+            dgvListaZdarzen.DataSource = lista;
+        }
+
         private string AutodetectArduinoPort()
         {
             ManagementScope connectionScope = new ManagementScope();
@@ -142,27 +158,6 @@ namespace Licznik_czasu
             }
 
             return null;
-        }
-
-
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            // interwał = 1 sekunda
-            CzasTrwania++;
-            OdstepPomiedzySygnalamiArduino++;
-            lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
-
-            if (OdstepPomiedzySygnalamiArduino > MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia == "Produkcja")
-            {
-                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Nieokreślony").FirstOrDefault();
-                UstawStan(typDoUstawienia);
-            }
-            else if (OdstepPomiedzySygnalamiArduino <= MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia != "Produkcja")
-            {
-                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Produkcja").FirstOrDefault();
-                UstawStan(typDoUstawienia);
-            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -202,47 +197,34 @@ namespace Licznik_czasu
                     errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
                     return false;
                 }
-                //toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
-                //errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
-                //foreach (var item in porty)
-                //{
-                //    myPort = item;
-                //    try
-                //    {
-                //        arduino.PortName = myPort;
-                //        arduino.Open();
-                //        errorProvider1.SetError(btnStartMaszyny, "");
-                //        toolStripStatusLabel2.Text = "Połączenie z arduino: OK";
-                //        return true;
-                //    }
-                //    catch (Exception)
-                //    {
 
-                //        toolStripStatusLabel2.Text = "Połączenie z arduino: Brak";
-                //        errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z adruino.");
-                //    }
+            }
+        }
 
-                //}
-                //return false;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // interwał = 1 sekunda
+            CzasTrwania++;
+            OdstepPomiedzySygnalamiArduino++;
+            lblCzasTrwania.Text = CzasTrwania.ToString() + " sekund temu!";
+
+            if (OdstepPomiedzySygnalamiArduino > MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia == "Produkcja")
+            {
+                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Nieokreślony").FirstOrDefault();
+                UstawStan(typDoUstawienia);
+            }
+            else if (OdstepPomiedzySygnalamiArduino <= MaxOdstepPomiedzySygnalamiArduino && ObecnyStan.NazwaZdarzenia != "Produkcja")
+            {
+                var typDoUstawienia = db.TypZdarzenia.Where(t => t.NazwaZdarzenia == "Produkcja").FirstOrDefault();
+                UstawStan(typDoUstawienia);
             }
         }
 
 
 
-        private void PopulateCmbStan()
-        {
-            List<TypZdarzenia> listaTypowZdarzen = db.TypZdarzenia.ToList();
-            cmbStan.DataSource = listaTypowZdarzen;
-            cmbStan.DisplayMember = "NazwaZdarzenia";
-            cmbStan.ValueMember = "TypZdarzeniaId";
-        }
 
-        private void PopulateDgvListaZdarzen()
-        {
-            List<Stan> listaStanow = db.Stan.Where(s => s.LiniaProdukcyjna == LiniaProdukcyjna).OrderByDescending(s => s.GodzinaUruchomienia).Take(500).ToList();
-            var lista = listaStanow.Select(l => new { l.StanId, l.TypZdarzenia.NazwaZdarzenia, l.GodzinaUruchomienia, l.CzasTrwania, l.Brygada }).ToList();
-            dgvListaZdarzen.DataSource = lista;
-        }
+
+       
 
 
         private void btnZmienStan_Click(object sender, EventArgs e)
@@ -587,7 +569,7 @@ namespace Licznik_czasu
             DialogResult wynik = typForm.ShowDialog();
             if (wynik == DialogResult.OK)
             {
-                //this.typZdarzeniasTableAdapter.Fill(this.licznikDataSet.TypZdarzenias);
+
                 PopulateCmbStan();
                 cmbStan.SelectedIndex = -1;
             }
@@ -622,35 +604,10 @@ namespace Licznik_czasu
             nowaMaszyna.ShowDialog();
         }
 
-
-
-
-
-
-        //funkcje testowe symulator sztuk
-        // TODO: usunąć
-        //private void btnStart_Click(object sender, EventArgs e)
-        //{
-
-        //    timer2.Interval = (int)nudPrzerwa.Value * 1000;
-        //    timer2.Start();
-        //}
-
-        //private void timer2_Tick(object sender, EventArgs e)
-        //{
-        //    Odstep = 0;
-        //}
-
-        //private void nudPrzerwa_ValueChanged(object sender, EventArgs e)
-        //{
-        //    timer2.Interval = (int)nudPrzerwa.Value * 1000;
-        //}
-
-        //private void btnStop_Click(object sender, EventArgs e)
-        //{
-        //    timer2.Stop();
-        //}
-        // Koniec symulatora
-
+        private void dodajProduktToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DodajProdukt form = new DodajProdukt();
+            form.ShowDialog();
+        }
     }
 }

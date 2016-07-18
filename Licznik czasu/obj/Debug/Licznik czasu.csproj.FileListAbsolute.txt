@@ -201,3 +201,4 @@ D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 GW 2016-06-22\Licznik c
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 GW 2016-06-22\Licznik czasu\obj\Debug\Licznik czasu.csproj.GenerateResource.Cache
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 GW 2016-06-22\Licznik czasu\obj\Debug\Licznik czasu.exe.manifest
 D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 GW 2016-06-22\Licznik czasu\obj\Debug\Licznik czasu.application
+D:\Dokumenty\Visual Studio 2015\Projects\Licznik czasu 3 GW 2016-06-22\Licznik czasu\obj\Debug\Licznik_czasu.DodajProdukt.resources

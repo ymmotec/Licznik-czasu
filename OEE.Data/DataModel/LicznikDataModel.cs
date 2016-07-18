@@ -18,10 +18,12 @@ namespace OEE.Data.DataModel
         public virtual DbSet<Przezbrojenie> Przezbrojenia { get; set; }
         public virtual DbSet<TypZdarzenia> TypZdarzenia { get; set; }
         public virtual DbSet<Linia> Linia { get; set; }
-        
+        public virtual DbSet<Produkt> Produkt { get; set; }
+        public virtual DbSet<Kolor> Kolor { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-        }
+    {
     }
+}
 }

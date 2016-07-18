@@ -6,7 +6,7 @@ using System.Data.Entity.Spatial;
 
 namespace OEE.Data.DataModel
 {
-    
+
 
     [Table("Stan")]
     public partial class Stan
@@ -28,5 +28,8 @@ namespace OEE.Data.DataModel
         [Required]
         public virtual TypZdarzenia TypZdarzenia { get; set; }
 
+        public Produkt Produkt { get; set; }
+
+        public Kolor Kolor { get; set; }
     }
 }

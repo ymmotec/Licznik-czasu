@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModel\Awaria.cs" />
+    <Compile Include="DataModel\Kolor.cs" />
     <Compile Include="DataModel\LicznikDataModel.cs" />
     <Compile Include="DataModel\Linia.cs" />
     <Compile Include="DataModel\Maszyny.cs" />
+    <Compile Include="DataModel\Produkt.cs" />
     <Compile Include="DataModel\Produkcja.cs" />
     <Compile Include="DataModel\Przezbrojenie.cs" />
     <Compile Include="DataModel\Stan.cs" />
@@ -64,6 +66,14 @@
     <Compile Include="Migrations\201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu.cs" />
     <Compile Include="Migrations\201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu.Designer.cs">
       <DependentUpon>201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607180921478_Dodałem produkt kolor.cs" />
+    <Compile Include="Migrations\201607180921478_Dodałem produkt kolor.Designer.cs">
+      <DependentUpon>201607180921478_Dodałem produkt kolor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607181018274_Klucz kombinowany w Produkcie.cs" />
+    <Compile Include="Migrations\201607181018274_Klucz kombinowany w Produkcie.Designer.cs">
+      <DependentUpon>201607181018274_Klucz kombinowany w Produkcie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu.resx">
       <DependentUpon>201606171015102_Dodałem typZdarzenia i lini jako wiele do wielu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607180921478_Dodałem produkt kolor.resx">
+      <DependentUpon>201607180921478_Dodałem produkt kolor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607181018274_Klucz kombinowany w Produkcie.resx">
+      <DependentUpon>201607181018274_Klucz kombinowany w Produkcie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

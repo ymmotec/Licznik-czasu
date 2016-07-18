@@ -71,6 +71,7 @@
             this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.dodajProduktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -86,7 +87,7 @@
             this.plikToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(921, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(902, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,7 +96,8 @@
             this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajMaszynyToolStripMenuItem,
             this.dodajTypZdarzeniaToolStripMenuItem,
-            this.generujRaportToolStripMenuItem});
+            this.generujRaportToolStripMenuItem,
+            this.dodajProduktToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
@@ -387,7 +389,7 @@
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 621);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(921, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(902, 22);
             this.statusStrip1.TabIndex = 22;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -474,13 +476,20 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // dodajProduktToolStripMenuItem
+            // 
+            this.dodajProduktToolStripMenuItem.Name = "dodajProduktToolStripMenuItem";
+            this.dodajProduktToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.dodajProduktToolStripMenuItem.Text = "Dodaj produkt";
+            this.dodajProduktToolStripMenuItem.Click += new System.EventHandler(this.dodajProduktToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(921, 643);
+            this.ClientSize = new System.Drawing.Size(902, 643);
             this.Controls.Add(this.dgvListaZdarzen);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
@@ -491,6 +500,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Stan maszyny";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -556,6 +566,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CzasTrwaniaDataGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrygadaDataGridViewColumn;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem dodajProduktToolStripMenuItem;
     }
 }
 

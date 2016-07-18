@@ -102,6 +102,12 @@
     <Compile Include="DodajMaszynyForm.Designer.cs">
       <DependentUpon>DodajMaszynyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajProdukt.Designer.cs">
+      <DependentUpon>DodajProdukt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajTypZdarzeniaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DodajMaszynyForm.resx">
       <DependentUpon>DodajMaszynyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajProdukt.resx">
+      <DependentUpon>DodajProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajTypZdarzeniaForm.resx">
       <DependentUpon>DodajTypZdarzeniaForm.cs</DependentUpon>
