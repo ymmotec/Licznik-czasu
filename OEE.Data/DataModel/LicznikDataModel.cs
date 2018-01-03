@@ -6,7 +6,7 @@ namespace OEE.Data.DataModel
     {
         // testowa Lokalna baza danych "name=LocalLicznikDataModel"
         // produkcyjna baza danych "name=LicznikDataModel"
-        public LicznikDataModel() : base("name=LicznikDataModel")
+        public LicznikDataModel() : base("name=LocaLicznikDataModel")
         {
 
         }
