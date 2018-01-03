@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licznik czasu", "Licznik czasu\Licznik czasu.csproj", "{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}"
 EndProject
@@ -9,24 +9,46 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEE.Data", "OEE.Data\OEE.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEE.Raport", "OEE.Raport\OEE.Raport.csproj", "{523AA868-CFFD-425D-A600-1D1E7959901D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GotowyLicznik.ino", "GotowyLicznik\GotowyLicznik.ino\GotowyLicznik.ino.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Debug|x86.Build.0 = Debug|Any CPU
 		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C3E6C22-C466-4FB1-93BD-3E08A08C87AF}.Release|x86.Build.0 = Release|Any CPU
 		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Debug|x86.Build.0 = Debug|Any CPU
 		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|x86.ActiveCfg = Release|Any CPU
+		{068E91EA-0575-4131-9485-15DC19F06FED}.Release|x86.Build.0 = Release|Any CPU
 		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Debug|x86.Build.0 = Debug|Any CPU
 		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|x86.ActiveCfg = Release|Any CPU
+		{523AA868-CFFD-425D-A600-1D1E7959901D}.Release|x86.Build.0 = Release|Any CPU
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
