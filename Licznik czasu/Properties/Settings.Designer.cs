@@ -43,5 +43,14 @@ namespace Licznik_czasu.Properties {
                 this["nazwaLiniiProdukcyjnej"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        public string j {
+            get {
+                return ((string)(this["j"]));
+            }
+        }
     }
 }

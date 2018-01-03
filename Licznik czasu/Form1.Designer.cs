@@ -34,6 +34,7 @@
             this.dodajMaszynyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajTypZdarzeniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generujRaportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajProduktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCzasTrwania = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,7 +72,10 @@
             this.CzasTrwaniaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrygadaDataGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.dodajProduktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblKolor = new System.Windows.Forms.Label();
+            this.lblProdukt = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -123,11 +127,18 @@
             this.generujRaportToolStripMenuItem.Text = "Generuj raport";
             this.generujRaportToolStripMenuItem.Click += new System.EventHandler(this.generujRaportToolStripMenuItem_Click);
             // 
+            // dodajProduktToolStripMenuItem
+            // 
+            this.dodajProduktToolStripMenuItem.Name = "dodajProduktToolStripMenuItem";
+            this.dodajProduktToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.dodajProduktToolStripMenuItem.Text = "Dodaj produkt";
+            this.dodajProduktToolStripMenuItem.Click += new System.EventHandler(this.dodajProduktToolStripMenuItem_Click);
+            // 
             // lblCzasTrwania
             // 
             this.lblCzasTrwania.AutoSize = true;
             this.lblCzasTrwania.ForeColor = System.Drawing.Color.Red;
-            this.lblCzasTrwania.Location = new System.Drawing.Point(212, 132);
+            this.lblCzasTrwania.Location = new System.Drawing.Point(212, 90);
             this.lblCzasTrwania.Name = "lblCzasTrwania";
             this.lblCzasTrwania.Size = new System.Drawing.Size(20, 24);
             this.lblCzasTrwania.TabIndex = 5;
@@ -140,6 +151,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox1.Controls.Add(this.lblProdukt);
+            this.groupBox1.Controls.Add(this.lblKolor);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lblUruchomionoo);
             this.groupBox1.Controls.Add(this.lblOpis);
             this.groupBox1.Controls.Add(this.label4);
@@ -157,7 +172,7 @@
             // lblUruchomionoo
             // 
             this.lblUruchomionoo.AutoSize = true;
-            this.lblUruchomionoo.Location = new System.Drawing.Point(212, 90);
+            this.lblUruchomionoo.Location = new System.Drawing.Point(212, 59);
             this.lblUruchomionoo.Name = "lblUruchomionoo";
             this.lblUruchomionoo.Size = new System.Drawing.Size(20, 24);
             this.lblUruchomionoo.TabIndex = 7;
@@ -166,7 +181,7 @@
             // lblOpis
             // 
             this.lblOpis.AutoSize = true;
-            this.lblOpis.Location = new System.Drawing.Point(212, 48);
+            this.lblOpis.Location = new System.Drawing.Point(212, 28);
             this.lblOpis.Name = "lblOpis";
             this.lblOpis.Size = new System.Drawing.Size(20, 24);
             this.lblOpis.TabIndex = 6;
@@ -175,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 132);
+            this.label4.Location = new System.Drawing.Point(22, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 24);
             this.label4.TabIndex = 2;
@@ -184,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 90);
+            this.label3.Location = new System.Drawing.Point(22, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 24);
             this.label3.TabIndex = 1;
@@ -193,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 48);
+            this.label2.Location = new System.Drawing.Point(22, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
             this.label2.TabIndex = 0;
@@ -476,12 +491,41 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // dodajProduktToolStripMenuItem
+            // label7
             // 
-            this.dodajProduktToolStripMenuItem.Name = "dodajProduktToolStripMenuItem";
-            this.dodajProduktToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.dodajProduktToolStripMenuItem.Text = "Dodaj produkt";
-            this.dodajProduktToolStripMenuItem.Click += new System.EventHandler(this.dodajProduktToolStripMenuItem_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 24);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Produkt:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 24);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Kolor:";
+            // 
+            // lblKolor
+            // 
+            this.lblKolor.AutoSize = true;
+            this.lblKolor.Location = new System.Drawing.Point(212, 152);
+            this.lblKolor.Name = "lblKolor";
+            this.lblKolor.Size = new System.Drawing.Size(20, 24);
+            this.lblKolor.TabIndex = 10;
+            this.lblKolor.Text = "0";
+            // 
+            // lblProdukt
+            // 
+            this.lblProdukt.AutoSize = true;
+            this.lblProdukt.Location = new System.Drawing.Point(212, 121);
+            this.lblProdukt.Name = "lblProdukt";
+            this.lblProdukt.Size = new System.Drawing.Size(20, 24);
+            this.lblProdukt.TabIndex = 11;
+            this.lblProdukt.Text = "0";
             // 
             // Form1
             // 
@@ -567,6 +611,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BrygadaDataGridViewColumn;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem dodajProduktToolStripMenuItem;
+        private System.Windows.Forms.Label lblProdukt;
+        private System.Windows.Forms.Label lblKolor;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 

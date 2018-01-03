@@ -19,6 +19,9 @@ namespace Licznik_czasu
     {
 
         private List<Awaria> listaAwariiBezOpisu;
+        private int brygada;
+        private Produkt obecnieProdukowanyProdukt;
+        private Kolor obecnieProdukowanyKolor;
 
         public int OdstepPomiedzySygnalamiArduino { get; set; }
         public int MaxOdstepPomiedzySygnalamiArduino { get; set; }
@@ -46,10 +49,44 @@ namespace Licznik_czasu
 
 
         public TypZdarzenia ObecnyStan { get; set; }
+        public Produkt ObecnieProdukowanyProdukt
+        {
+            get
+            {
+                return this.obecnieProdukowanyProdukt;
+            }
+            set
+            {
+                this.obecnieProdukowanyProdukt = value;
+                this.lblProdukt.Text = obecnieProdukowanyProdukt.PelnaNazwa;
+            }
+        }
+        public Kolor ObecnieProdukowanyKolor
+        {
+            get
+            {
+                return this.obecnieProdukowanyKolor;
+            }
+            set
+            {
+                this.obecnieProdukowanyKolor = value;
+                this.lblKolor.Text = obecnieProdukowanyKolor.NazwaKoloru;
+            }
+        }
         public DateTime CzasUruchomienia { get; set; }
         public int CzasTrwania { get; set; }
         LicznikDataModel db = new LicznikDataModel();
-        public int Brygada { get; set; }
+        public int Brygada
+        {
+            get
+            {
+                return this.brygada;
+            }
+            set
+            {
+                this.brygada = value;
+            }
+        }
         public float Tempo { get; set; }
 
         /// <summary>
@@ -224,7 +261,7 @@ namespace Licznik_czasu
 
 
 
-       
+
 
 
         private void btnZmienStan_Click(object sender, EventArgs e)
@@ -273,44 +310,19 @@ namespace Licznik_czasu
             4. Startuję licznik
             */
             // Uruchamiam formularz inicjujący
-
-            if (rdbBrygada1.Checked == false && rdbBrygada2.Checked == false && rdbBrygada3.Checked == false)
+            if (ValidujFormularz())
             {
-                errorProvider1.SetError(grBoxBrygada, "Proszę wybrać numer brygady!");
-            }
-            else if (cmbStan.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(cmbStan, "Proszę wybrać stan.");
-            }
-            else if (!SprawdzPolaczenieZArduino())
-            {
-                errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z arduino");
-            }
-            else
-            {
-                // formularz został wypełniony więc mogę uruchomić licznik
-                errorProvider1.SetError(grBoxBrygada, "");
-                errorProvider1.SetError(cmbStan, "");
-                errorProvider1.SetError(btnStartMaszyny, "");
-
-                // sprawdzam która brygada została wybrana i ustawiam właściwość Brygada
-                if (rdbBrygada1.Checked == true)
-                {
-                    Brygada = 1;
-                }
-                else if (rdbBrygada2.Checked == true)
-                {
-                    Brygada = 2;
-                }
-                else
-                {
-                    Brygada = 3;
-                }
-
-
                 // ustawienia nasłuchiwania
                 try
                 {
+                    DanePrzezbrojeniaForm nowyProdukt = new DanePrzezbrojeniaForm();
+                    DialogResult wynik = nowyProdukt.ShowDialog();
+                    if (wynik == DialogResult.OK)
+                    {
+                        this.ObecnieProdukowanyProdukt = nowyProdukt.ObecnyProdukt;
+                        this.ObecnieProdukowanyKolor = nowyProdukt.ObecnyKolor;
+                    }
+
                     SprawdzPolaczenieZArduino();
                     CzasTrwania = 0;
 
@@ -340,6 +352,42 @@ namespace Licznik_czasu
             }
         }
 
+        private bool ValidujFormularz()
+        {
+            if (rdbBrygada1.Checked == false && rdbBrygada2.Checked == false && rdbBrygada3.Checked == false)
+            {
+                errorProvider1.SetError(grBoxBrygada, "Proszę wybrać numer brygady!");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(grBoxBrygada, "");
+            }
+
+            if (cmbStan.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cmbStan, "Proszę wybrać stan.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbStan, "");
+
+            }
+
+            if (!SprawdzPolaczenieZArduino())
+            {
+                errorProvider1.SetError(btnStartMaszyny, "Uwaga!!! Brak połączenia z arduino");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(btnStartMaszyny, "");
+            }
+
+            return true;
+        }
+
 
         /// <summary>
         /// Ustawia stan obecny maszyny
@@ -347,6 +395,38 @@ namespace Licznik_czasu
         /// <param name="stan">Nowy stan maszyny</param>
         private async void UstawStan(TypZdarzenia nowyStan)
         {
+            //Zapisz obecny stan
+
+            switch (nowyStan.NazwaZdarzenia)
+            {
+                case "Przezbrojenie":
+                    DanePrzezbrojeniaForm nowePrzezbrojenieForm = new DanePrzezbrojeniaForm();
+                    DialogResult wynik = nowePrzezbrojenieForm.ShowDialog();
+                    if (wynik == DialogResult.OK)
+                    {
+                        this.ObecnieProdukowanyProdukt = nowePrzezbrojenieForm.ObecnyProdukt;
+                        this.ObecnieProdukowanyKolor = nowePrzezbrojenieForm.ObecnyKolor;
+                        Przezbrojenie nowePrzezbrojenie = new Przezbrojenie
+                        {
+                            GodzinaUruchomienia = CzasUruchomienia,
+                            CzasTrwania = this.CzasTrwania,
+                            TypZdarzenia = ObecnyStan,
+                            Brygada = this.Brygada,
+                            LiniaProdukcyjna = this.LiniaProdukcyjna,
+                            Produkt = this.ObecnieProdukowanyProdukt,
+                            Kolor = this.ObecnieProdukowanyKolor
+                        };
+                        db.Przezbrojenia.Add(nowePrzezbrojenie);
+                        await db.SaveChangesAsync();
+                        ObecnyStan = nowyStan;
+                    }
+                    break;
+                case "Awaria":
+                    break;
+                default:
+                    break;
+            }
+
             if (ObecnyStan != null)
             {
 
@@ -362,7 +442,16 @@ namespace Licznik_czasu
                 {
                     // typ ObecnyStan do zapisania to awaria zapisujemy obiekt awarii
 
-                    Awaria nowaAwaria = new Awaria { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
+                    Awaria nowaAwaria = new Awaria
+                    {
+                        GodzinaUruchomienia = CzasUruchomienia,
+                        CzasTrwania = this.CzasTrwania,
+                        TypZdarzenia = ObecnyStan,
+                        Brygada = this.Brygada,
+                        LiniaProdukcyjna = this.LiniaProdukcyjna,
+                        Produkt = this.ObecnieProdukowanyProdukt,
+                        Kolor = this.ObecnieProdukowanyKolor
+                    };
 
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
@@ -384,7 +473,17 @@ namespace Licznik_czasu
                 {
                     // typ ObecnyStan to Przezbrojenie zapisujemy obiekt przezbrojenie
 
-                    Przezbrojenie nowePrzezbrojenie = new Przezbrojenie { GodzinaUruchomienia = CzasUruchomienia, CzasTrwania = this.CzasTrwania, TypZdarzenia = ObecnyStan, Brygada = this.Brygada, LiniaProdukcyjna = this.LiniaProdukcyjna };
+
+                    Przezbrojenie nowePrzezbrojenie = new Przezbrojenie
+                    {
+                        GodzinaUruchomienia = CzasUruchomienia,
+                        CzasTrwania = this.CzasTrwania,
+                        TypZdarzenia = ObecnyStan,
+                        Brygada = this.Brygada,
+                        LiniaProdukcyjna = this.LiniaProdukcyjna,
+                        Produkt = this.ObecnieProdukowanyProdukt,
+                        Kolor = this.ObecnieProdukowanyKolor
+                    };
 
                     // ustawiam nowy stan obecny
                     DateTime godz = DateTime.Now;
@@ -449,15 +548,15 @@ namespace Licznik_czasu
                 }
                 else if (typ.TypZdarzenia.NazwaZdarzenia == "Przezbrojenie")
                 {
-                    Przezbrojenie przezbr = (Przezbrojenie)typ;
-                    DanePrzezbrojeniaForm danePrzezbrojenia = new DanePrzezbrojeniaForm { WybranePrzezbrojenie = przezbr };
-                    DialogResult wynik = danePrzezbrojenia.ShowDialog();
-                    if (wynik == DialogResult.OK)
-                    {
-                        przezbr = danePrzezbrojenia.WybranePrzezbrojenie;
-                        db.Entry(przezbr).State = System.Data.Entity.EntityState.Modified;
-                        await db.SaveChangesAsync();
-                    }
+                    //Przezbrojenie przezbr = (Przezbrojenie)typ;
+                    //DanePrzezbrojeniaForm danePrzezbrojenia = new DanePrzezbrojeniaForm { WybranePrzezbrojenie = przezbr };
+                    //DialogResult wynik = danePrzezbrojenia.ShowDialog();
+                    //if (wynik == DialogResult.OK)
+                    //{
+                    //    przezbr = danePrzezbrojenia.WybranePrzezbrojenie;
+                    //    db.Entry(przezbr).State = System.Data.Entity.EntityState.Modified;
+                    //    await db.SaveChangesAsync();
+                    //}
                 }
                 else
                 {
